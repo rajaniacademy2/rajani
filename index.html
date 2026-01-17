@@ -1,209 +1,228 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RAJANI ACADEMY</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAJANI ACADEMY</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: pink;
-        }
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-        header {
-            background: blue;
-            color: white;
-            padding: 0px;
-            text-align: center;
-        }
+body{
+    font-family:Arial, sans-serif;
+    background:pink;
+}
 
-        nav {
-            background: yellow;
-            padding: 7px 20px;
-        }
+/* ===== HEADER ===== */
+header{
+    background:blue;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
 
-        .menu {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+.header-img img{
+    width:80px;
+    height:auto;
+}
 
-        .menu li {
-            display: inline-block;
-            position: relative;
-        }
+.header-text h1{
+    font-size:clamp(22px,5vw,32px);
+}
 
-        .menu a {
-            color: blue;
-            text-decoration: underline;
-            padding: 10px 15px;
-            display: block;
-            font-size: 17px;
-        }
+.header-text p{
+    font-size:clamp(14px,4vw,18px);
+    margin-top:5px;
+}
 
-        .menu a:hover {
-            color: red;
-        }
+/* ===== NAVBAR ===== */
+nav{
+    background:yellow;
+}
 
-        /* Dropdown */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: white;
-            min-width: 160px;
-            top: 40px;
-            left: 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
+.menu{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
 
-        .dropdown-content li {
-            display: block;
-        }
+.menu li{
+    position:relative;
+}
 
-        .dropdown-content a {
-            color: black;
-            text-decoration: none;
-        }
+.menu a{
+    display:block;
+    padding:10px 15px;
+    color:blue;
+    text-decoration:none;
+    font-size:16px;
+}
 
-        .dropdown-content a:hover {
-            background: lightgray;
-        }
+.menu a:hover{
+    color:red;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+/* Dropdown */
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background:white;
+    min-width:180px;
+    top:40px;
+    left:0;
+    box-shadow:0 4px 8px rgba(0,0,0,0.3);
+    z-index:10;
+}
 
-        .hero {
-            background: #00FFFF;
-            padding: 80px;
-            text-align: center;
-        }
+.dropdown-content li{
+    display:block;
+}
 
-        footer {
-            background:black;
-            color:white;
-            padding: 20px;
-            text-align: center;
-            margin-top:10px;
-        }
-    </style>
+.dropdown-content a{
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+/* ===== HERO ===== */
+.hero{
+    background:#00ffff;
+    padding:20px;
+    text-align:center;
+}
+
+.hero img{
+    width:100%;
+    height:auto;
+    max-width:1300px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:15px;
+    font-size:14px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:768px){
+
+    .menu{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        box-shadow:none;
+    }
+
+    nav{
+        padding:5px 0;
+    }
+
+    header{
+        padding:10px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header class="header">
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="header-img">
+        <img src="image/dfa31629-f255-4e8d-8f84-9691ab75cd0c.jpg">
+    </div>
 
-    <div class="header-img left">
-    <img src="image/dfa31629-f255-4e8d-8f84-9691ab75cd0c.jpg" width="80" height="80">
-  
- <!-- Middle Text -->
     <div class="header-text">
-     <h1>RAJANI ACADEMY</h1>
-     <p>
-ওয়েবসাইটে আপনাকে স্বাগতম</p>
-<p>Rajani Academy একটি শিক্ষা ও কোচিং প্ল্যাটফর্ম,
-যেখানে WBPSC, WBSSC Group-C পরীক্ষার জন্য
-MCQ, PDF Notes ও Practice Test প্রদান করা হয়।
-</p>
+        <h1>RAJANI ACADEMY</h1>
+        <p>ওয়েবসাইটে আপনাকে স্বাগতম</p>
+        <p>
+        Rajani Academy একটি শিক্ষা ও কোচিং প্ল্যাটফর্ম,
+        যেখানে WBPSC, WBSSC Group-C পরীক্ষার জন্য
+        MCQ, PDF Notes ও Practice Test প্রদান করা হয়।
+        </p>
+    </div>
+</header>
 
- </div>
+<!-- ===== NAVBAR ===== -->
+<nav>
+<ul class="menu">
 
-    </header>
+<li class="dropdown">
+<a href="#">HOME ▼</a>
+<ul class="dropdown-content">
+<li><a href="GK TRIKE BOOK.docx">GK TRIKE BOOK</a></li>
+<li><a href="shyam.html">Shyam</a></li>
+<li><a href="about.html">About Us</a></li>
+</ul>
+</li>
 
+<li class="dropdown">
+<a href="#">ENQUIRY FORM ▼</a>
+<ul class="dropdown-content">
+<li><a href="https://docs.google.com/forms/d/e/1FAIpQLScSE02EtmUz_ucoO_gb0uOMsr3bOPCK6Kc4MGj6NJ3dpLgLtQ/viewform">Enquiry Details</a></li>
+</ul>
+</li>
 
+<li class="dropdown">
+<a href="#">ADMISSION FORM ▼</a>
+<ul class="dropdown-content">
+<li><a href="apply.html">Admission Details</a></li>
+</ul>
+</li>
 
-<nav class="navbar">
-    <ul class="menu">
+<li class="dropdown">
+<a href="#">Demo Study Materials ▼</a>
+<ul class="dropdown-content">
+<li><a href="mission.html">GK</a></li>
+<li><a href="downloadlink.html">ENGLISH</a></li>
+<li><a href="contact.html">MATH</a></li>
+</ul>
+</li>
 
-        <li class="dropdown">
-            <a href="#">HOME ▼</a>
-            <ul class="dropdown-content">
-                <li><a href="GK TRIKE BOOK.docx">GK TRIKE BOOK</a></li>
-                <li><a href="shyam.html">Shyam</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </li>
+<li class="dropdown">
+<a href="#">DOWNLOAD ▼</a>
+<ul class="dropdown-content">
+<li><a href="download.html">Syllabus</a></li>
+<li><a href="files/notes.pdf">Notes</a></li>
+<li><a href="files/result.pdf">Result</a></li>
+</ul>
+</li>
 
-        <li class="dropdown">
-            <a href="#">ENQUIRY FORM ▼</a>
-            <ul class="dropdown-content">
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScSE02EtmUz_ucoO_gb0uOMsr3bOPCK6Kc4MGj6NJ3dpLgLtQ/viewform?usp=publish-editor">1️⃣ Enquiry Details</a></li>
-                 </ul>
-        </li>
-		<li class="dropdown">
-            <a href="#">ADMISSION FORM ▼</a>
-            <ul class="dropdown-content">
-                <li><a href="apply.html">1️⃣ ADMISSION DETAILS</a></li>
-            </ul>
-        </li>
- <li class="dropdown">
-            <a href="#"> Demo Study Materials ▼</a>
-            <ul class="dropdown-content">
-                <li><a href="mission.html">GK</a></li>
-                <li><a href="downloadlink.html">ENGLISH</a></li>
-                <li><a href="contact.html">MATH</a></li>
-            </ul>
-        </li>
-       
+<li class="dropdown">
+<a href="#">GALLERY ▼</a>
+<ul class="dropdown-content">
+<li><a href="photo.html">Photo</a></li>
+<li><a href="https://www.youtube.com/@rajaniacademy6012">Video</a></li>
+</ul>
+</li>
 
-        <li class="dropdown">
-            <a href="#">DOWNLOAD ▼</a>
-            <ul class="dropdown-content">
-                <li><a href="download.html" download>Syllabus</a></li>
-                <li><a href="files/notes.pdf" download>Notes</a></li>
-                <li><a href="files/result.pdf" download>Result</a></li>
-            </ul>
-        </li>
-
-        <li class="dropdown">
-            <a href="#">GALLERY ▼</a>
-            <ul class="dropdown-content">
-                <li><a href="photo.html">Photo</a></li>
-              <li><a href="https://www.youtube.com/@rajaniacademy6012">vedio</a></li> 
-            </ul>
-        </li>
-
-    </ul>
+</ul>
 </nav>
 
-
-
+<!-- ===== HERO ===== -->
 <div class="hero">
-
-<img src="image/Students-India-1024x576.jpg" alt="Left Image" width="1300" height="400">
+<img src="image/Students-India-1024x576.jpg" alt="Students">
 </div>
 
+<!-- ===== FOOTER ===== -->
 <footer>
-© 2025 RAJANI ACADEMY | বেলদা কলেজের নিকটে ২ থেকে ৫ মিনিটের পায়ে হাঁটা পথ <br>
-			যোগাযোগ নাম্বার ঃ--7384998077
+© 2025 RAJANI ACADEMY <br>
+বেলদা কলেজের নিকটে ২–৫ মিনিটের পায়ে হাঁটা পথ <br>
+যোগাযোগ : 7384998077
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
