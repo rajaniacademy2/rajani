@@ -7,17 +7,22 @@
 <title>RAJANI ACADEMY | Study Materials</title>
 <meta name="description" content="Rajani Academy school books, study materials, Maths, GK, English and competitive examination practice sets.">
 
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVF2CK9X85"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZVF2CK9X85');
+</script>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,"Noto Sans Bengali",sans-serif;background:#eaf3ff;color:#222}
-
-/* HEADER */
 header{background:#0808c9;color:white;text-align:center;padding:10px}
 header img{width:60px;max-height:70px;object-fit:contain}
 header h1{font-size:30px;margin:5px}
 header p{font-size:13px;line-height:1.6}
-
-/* NAVIGATION */
 nav{background:#ffeb00;position:relative;z-index:10}
 .menu{list-style:none;display:flex;flex-wrap:wrap;justify-content:center}
 .menu li{position:relative}
@@ -26,14 +31,10 @@ nav{background:#ffeb00;position:relative;z-index:10}
 .dropdown-content{display:none;position:absolute;top:100%;left:0;min-width:190px;background:white;box-shadow:0 4px 10px #0003;list-style:none}
 .dropdown-content a{color:#222;font-weight:normal}
 .dropdown:hover>.dropdown-content,.dropdown:focus-within>.dropdown-content{display:block}
-
-/* MAIN */
 main{padding:12px 10px 20px}
 .section-heading{text-align:center;background:#123e86;color:white;padding:12px 5px;margin:8px 0 15px;border-radius:6px;font-size:25px}
 .class-section,.subject-section{margin-bottom:24px}
 .class-heading{text-align:center;background:#087dcc;color:white;padding:9px;margin-bottom:10px;border-radius:5px;font-size:19px}
-
-/* CARDS */
 .card-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .card{min-width:0;background:white;border:1px solid #d0d9e8;border-radius:8px;overflow:hidden;text-align:center;box-shadow:0 2px 6px #0001}
 .cover{height:180px;background:#f4f7fc;display:flex;align-items:center;justify-content:center;padding:8px}
@@ -43,20 +44,14 @@ main{padding:12px 10px 20px}
 .card p{font-size:12px;padding:3px 5px;line-height:1.5}
 .card a.open-link{display:inline-block;margin:7px 3px 10px;padding:8px 10px;background:#087dcc;color:white;text-decoration:none;border-radius:4px;font-size:12px}
 .card a.open-link:hover{background:#064c94}
-
-/* SUBJECT COLORS */
 .subject-math .class-heading{background:#087b43}
 .subject-gk .class-heading{background:#a85b00}
 .subject-english .class-heading{background:#7137a5}
 .subject-current .class-heading{background:#b32646}
 .subject-reasoning .class-heading{background:#166d78}
 .subject-practice .class-heading{background:#444}
-
-/* FOOTER */
 footer{background:#111;color:white;text-align:center;padding:7px 5px;font-size:12px;line-height:1.6}
 footer a{color:#ffeb00;text-decoration:none}
-
-/* RESPONSIVE */
 @media(max-width:900px){
  .card-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
  .cover{height:160px}
@@ -78,8 +73,6 @@ footer a{color:#ffeb00;text-decoration:none}
 </head>
 
 <body>
-
-<!-- HEADER -->
 <header>
   <img src="image/bb578b6a-b866-4c9f-8adf-a4984c9b72d3.png" alt="Rajani Academy Logo">
   <h1>RAJANI ACADEMY</h1>
@@ -87,10 +80,8 @@ footer a{color:#ffeb00;text-decoration:none}
   <p>School Study Materials | Competitive Exam Preparation | MCQ | PDF Notes</p>
 </header>
 
-<!-- NAVIGATION: পুরোনো মেনু -->
 <nav>
 <ul class="menu">
-
 <li class="dropdown">
 <a href="#">HOME ▼</a>
 <ul class="dropdown-content">
@@ -130,8 +121,8 @@ footer a{color:#ffeb00;text-decoration:none}
 <a href="#">DOWNLOAD ▼</a>
 <ul class="dropdown-content">
 <li><a href="download.html">Download Materials</a></li>
-<li><a href="files/notes.pdf" target="_blank">PDF Notes</a></li>
-<li><a href="files/result.pdf" target="_blank">Result</a></li>
+<li><a href="files/notes.pdf" target="_blank" rel="noopener">PDF Notes</a></li>
+<li><a href="files/result.pdf" target="_blank" rel="noopener">Result</a></li>
 </ul>
 </li>
 
@@ -142,18 +133,13 @@ footer a{color:#ffeb00;text-decoration:none}
 <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
 </ul>
 </li>
-
 </ul>
 </nav>
 
 <main>
-
-<!-- SCHOOL STUDY MATERIALS -->
 <h2 class="section-heading">স্কুলের স্টাডি ম্যাটেরিয়ালস</h2>
-
 <div id="school-materials"></div>
 
-<!-- JOB EXAM MATERIALS -->
 <h2 class="section-heading">চাকরির পরীক্ষার স্টাডি ম্যাটেরিয়ালস</h2>
 
 <section class="subject-section subject-math">
@@ -221,10 +207,8 @@ footer a{color:#ffeb00;text-decoration:none}
 <div class="card"><div class="cover"><div class="cover-placeholder">PDF NOTES</div></div><h4>PDF Notes</h4><p>ডাউনলোডযোগ্য নোট</p><a class="open-link" href="files/notes.pdf">PDF খুলুন</a></div>
 </div>
 </section>
-
 </main>
 
-<!-- SMALL FOOTER -->
 <footer>
 <p><strong>RAJANI ACADEMY</strong> | Belda, West Medinipur</p>
 <p>যোগাযোগ: <a href="tel:7384998077">7384998077</a></p>
@@ -232,13 +216,7 @@ footer a{color:#ffeb00;text-decoration:none}
 </footer>
 
 <script>
-/*
-  প্রতিটি ক্লাসের জন্য 5টি কার্ড তৈরি হবে।
-  বইয়ের কভার না থাকলেও ভাঙা ছবি দেখাবে না।
-  আসল ছবি যোগ করতে image/books/class5/book1.jpg
-  এর মতো ফাইল GitHub-এ আপলোড করুন।
-*/
-
+/* Class 5–10 study-material cards */
 const classes = [5, 6, 7, 8, 9, 10];
 const schoolContainer = document.getElementById("school-materials");
 
@@ -268,12 +246,13 @@ classes.forEach(classNo => {
     const placeholder = document.createElement("div");
     placeholder.className = "cover-placeholder";
     placeholder.textContent = "CLASS " + classNo + " BOOK " + bookNo;
-
     cover.appendChild(placeholder);
+
     img.onload = () => {
       cover.innerHTML = "";
       cover.appendChild(img);
     };
+
     card.appendChild(cover);
 
     const title = document.createElement("h4");
@@ -299,9 +278,23 @@ classes.forEach(classNo => {
   schoolContainer.appendChild(section);
 });
 
-/* ছবি না থাকলে placeholder-টি বজায় থাকবে */
-</script>
+/* Track clicks on study-material links */
+document.addEventListener('click', function(event) {
+  const link = event.target.closest('a.open-link');
+  if (!link) return;
 
+  if (typeof window.gtag === 'function') {
+    const card = link.closest('.card');
+    const title = card && card.querySelector('h4');
+
+    window.gtag('event', 'study_material_click', {
+      link_text: (link.textContent || '').trim(),
+      link_url: link.href,
+      material_title: title ? title.textContent.trim() : '',
+      page_location: window.location.href
+    });
+  }
+});
+</script>
 </body>
 </html>
-
