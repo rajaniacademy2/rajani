@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -6,132 +7,225 @@
 <title>RAJANI ACADEMY</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    font-family:Arial, sans-serif;
-    background:pink;
+body {
+    font-family: Arial, sans-serif;
+    background: pink;
 }
 
-/* ===== HEADER ===== */
-header{
-    background:blue;
-    color:white;
-    text-align:center;
-    padding:15px;
+/* HEADER */
+header {
+    background: blue;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
 
-.header-img img{
-    width:80px;
-    height:auto;
+.header-img img {
+    width: 65px;
+    height: auto;
 }
 
-.header-text h1{
-    font-size:clamp(22px,5vw,32px);
+.header-text h1 {
+    font-size: clamp(22px, 4vw, 32px);
 }
 
-.header-text p{
-    font-size:clamp(14px,4vw,18px);
-    margin-top:5px;
+.header-text p {
+    font-size: 14px;
+    margin-top: 4px;
 }
 
-/* ===== NAVBAR ===== */
-nav{
-    background:yellow;
+/* NAVBAR */
+nav {
+    background: yellow;
 }
 
-.menu{
-    list-style:none;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+.menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.menu li{
-    position:relative;
+.menu li {
+    position: relative;
 }
 
-.menu a{
-    display:block;
-    padding:10px 15px;
-    color:blue;
-    text-decoration:none;
-    font-size:16px;
+.menu a {
+    display: block;
+    padding: 10px 12px;
+    color: blue;
+    text-decoration: none;
+    font-size: 14px;
 }
 
-.menu a:hover{
-    color:red;
+.menu a:hover {
+    color: red;
 }
 
-/* Dropdown */
-.dropdown-content{
-    display:none;
-    position:absolute;
-    background:white;
-    min-width:180px;
-    top:40px;
-    left:0;
-    box-shadow:0 4px 8px rgba(0,0,0,0.3);
-    z-index:10;
+/* DROPDOWN */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 190px;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+    z-index: 100;
 }
 
-.dropdown-content li{
-    display:block;
+.dropdown-content li {
+    display: block;
 }
 
-.dropdown-content a{
-    color:black;
+.dropdown-content a {
+    color: black;
 }
 
-.dropdown:hover .dropdown-content{
-    display:block;
+.dropdown:hover > .dropdown-content,
+.dropdown:focus-within > .dropdown-content {
+    display: block;
 }
 
-/* ===== HERO ===== */
-.hero{
-    background:#00ffff;
-    padding:20px;
-    text-align:center;
+/* BOOK SECTION */
+.books-section {
+    background: #eaf7ff;
+    padding: 18px 12px;
+    min-height: 65vh;
 }
 
-.hero img{
-    width:100%;
-    height:auto;
-    max-width:1300px;
+.section-title {
+    text-align: center;
+    color: #123b79;
+    margin-bottom: 18px;
+    font-size: clamp(22px, 4vw, 30px);
 }
 
-/* ===== FOOTER ===== */
-footer{
-    background:black;
-    color:white;
-    text-align:center;
-    padding:15px;
-    font-size:14px;
+.class-section {
+    margin-bottom: 28px;
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
-@media(max-width:768px){
+.class-title {
+    background: #123b79;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
 
-    .menu{
-        flex-direction:column;
-        align-items:center;
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.book-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 6px #00000015;
+    transition: transform .2s;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+}
+
+.book-card a {
+    display: block;
+    padding: 8px;
+    color: #123b79;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.book-cover {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    background: #f5f5f5;
+}
+
+.book-name {
+    font-size: 14px;
+    padding: 8px 3px 3px;
+}
+
+.book-link {
+    display: inline-block;
+    background: #087bdb;
+    color: white !important;
+    padding: 7px 10px !important;
+    border-radius: 4px;
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 7px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .book-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .dropdown-content{
-        position:static;
-        box-shadow:none;
+    .book-cover {
+        height: 170px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: row;
+        justify-content: center;
     }
 
-    nav{
-        padding:5px 0;
+    .menu a {
+        padding: 9px 7px;
+        font-size: 12px;
     }
 
-    header{
-        padding:10px;
+    .dropdown-content {
+        min-width: 170px;
+    }
+
+    .books-section {
+        padding: 12px 8px;
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .book-cover {
+        height: 160px;
+    }
+
+    .book-name {
+        font-size: 13px;
+    }
+
+    .header-text p {
+        line-height: 1.4;
     }
 }
 </style>
@@ -139,31 +233,32 @@ footer{
 
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- HEADER: আগের মতো -->
 <header>
     <div class="header-img">
-        <img src="image/bb578b6a-b866-4c9f-8adf-a4984c9b72d3.png">
+        <img src="image/bb578b6a-b866-4c9f-8adf-a4984c9b72d3.png"
+             alt="Rajani Academy Logo">
     </div>
 
     <div class="header-text">
         <h1>RAJANI ACADEMY</h1>
         <p>ওয়েবসাইটে আপনাকে স্বাগতম</p>
         <p>
-        Rajani Academy একটি শিক্ষা ও কোচিং প্ল্যাটফর্ম,
-        যেখানে WBPSC, WBSSC Group-C পরীক্ষার জন্য
-        MCQ, PDF Notes ও Practice Test প্রদান করা হয়।
+            Rajani Academy একটি শিক্ষা ও কোচিং প্ল্যাটফর্ম,
+            যেখানে WBPSC, WBSSC Group-C পরীক্ষার জন্য
+            MCQ, PDF Notes ও Practice Test প্রদান করা হয়।
         </p>
     </div>
 </header>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAVBAR: সব পুরোনো মেনু রাখা হয়েছে -->
 <nav>
 <ul class="menu">
 
 <li class="dropdown">
 <a href="#">HOME ▼</a>
 <ul class="dropdown-content">
-<li><a href="GK TRIKE BOOK.docx">GK TRIKE BOOK</a></li>
+<li><a href="GK%20TRIKE%20BOOK.docx">GK TRIKE BOOK</a></li>
 <li><a href="shyam.html">Shyam</a></li>
 <li><a href="about.html">About Us</a></li>
 </ul>
@@ -176,7 +271,7 @@ footer{
 <li><a href="apply.html">2️⃣ Student Basic Information</a></li>
 <li><a href="apply.html">3️⃣ Course Enquiry Details</a></li>
 <li><a href="apply.html">4️⃣ Contact Information</a></li>
-<li><a href="apply.html">5️⃣ Fee Discussion</a></li>    
+<li><a href="apply.html">5️⃣ Fee Discussion</a></li>
 </ul>
 </li>
 
@@ -216,20 +311,89 @@ footer{
 </ul>
 </nav>
 
-<!-- ===== HERO ===== -->
-<div class="hero">
-<img src="image/Students-India-1024x576.jpg" alt="Students">
-</div>
+<!-- BOOKS: এখানে ক্লাসের বই যোগ হবে -->
+<main class="books-section">
+<h2 class="section-title">📚 CHOOSE YOUR CLASS</h2>
 
-<!-- ===== FOOTER ===== -->
+<div id="books-container"></div>
+</main>
+
+<!-- SMALL FOOTER -->
 <footer>
-© 2025 RAJANI ACADEMY <br>
-বেলদা কলেজের নিকটে ২–৫ মিনিটের পায়ে হাঁটা পথ <br>
-যোগাযোগ : 7384998077
+    © 2026 RAJANI ACADEMY |
+    বেলদা কলেজের নিকটে |
+    যোগাযোগ: 7384998077
 </footer>
+
+<script>
+const classes = [
+    { name: "CLASS 5", folder: "class5", count: 5 },
+    { name: "CLASS 6", folder: "class6", count: 5 },
+    { name: "CLASS 7", folder: "class7", count: 5 },
+    { name: "CLASS 8", folder: "class8", count: 5 }
+];
+
+const container = document.getElementById("books-container");
+
+classes.forEach(cls => {
+    const section = document.createElement("section");
+    section.className = "class-section";
+
+    const heading = document.createElement("h3");
+    heading.className = "class-title";
+    heading.textContent = cls.name;
+
+    const grid = document.createElement("div");
+    grid.className = "book-grid";
+
+    for (let i = 1; i <= cls.count; i++) {
+        const card = document.createElement("div");
+        card.className = "book-card";
+
+        const link = document.createElement("a");
+        link.href = `books/${cls.folder}/book${i}.pdf`;
+        link.target = "_blank";
+        link.rel = "noopener";
+
+        const img = document.createElement("img");
+        img.className = "book-cover";
+        img.src = `image/books/${cls.folder}/book${i}.jpg`;
+        img.alt = `${cls.name} Book ${i}`;
+        img.loading = "lazy";
+
+        // ছবি না থাকলে নমুনা কভার দেখানোর বদলে বার্তা
+        img.onerror = function() {
+            this.style.display = "none";
+            const missing = document.createElement("div");
+            missing.style.cssText =
+                "height:190px;display:flex;align-items:center;" +
+                "justify-content:center;background:#e7efff;" +
+                "color:#123b79;padding:10px;font-size:13px;";
+            missing.textContent = "এখানে বইয়ের কভার যোগ করুন";
+            this.parentNode.insertBefore(missing, this.nextSibling);
+            this.onerror = null;
+        };
+
+        const name = document.createElement("div");
+        name.className = "book-name";
+        name.textContent = `${cls.name} - Book ${i}`;
+
+        const button = document.createElement("span");
+        button.className = "book-link";
+        button.textContent = "বই খুলুন";
+
+        link.appendChild(img);
+        link.appendChild(name);
+        link.appendChild(button);
+        card.appendChild(link);
+        grid.appendChild(card);
+    }
+
+    section.appendChild(heading);
+    section.appendChild(grid);
+    container.appendChild(section);
+});
+</script>
 
 </body>
 </html>
-
-
-
