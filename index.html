@@ -512,16 +512,6 @@ footer a {
   </div>
 </div>
 
-<div class="card" data-search="math practice set গণিত অনুশীলন">
-  <div class="cover"><div class="cover-placeholder">PRACTICE SET</div></div>
-  <h4>Math Practice Set</h4>
-  <p>পরীক্ষার প্রস্তুতি</p>
-  <div class="card-links">
-    <a class="open-link" href="contact.html">PDF খুলুন</a>
-    <a class="video-link" href="videos/math-practice.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
-  </div>
-</div>
-
 </div>
 </section>
 
@@ -567,16 +557,6 @@ footer a {
   <div class="card-links">
     <a class="open-link" href="mission.html">PDF খুলুন</a>
     <a class="video-link" href="videos/polity.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
-  </div>
-</div>
-
-<div class="card" data-search="general science সাধারণ বিজ্ঞান">
-  <div class="cover"><div class="cover-placeholder">SCIENCE</div></div>
-  <h4>General Science</h4>
-  <p>সাধারণ বিজ্ঞান</p>
-  <div class="card-links">
-    <a class="open-link" href="mission.html">PDF খুলুন</a>
-    <a class="video-link" href="videos/science.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
   </div>
 </div>
 
@@ -628,16 +608,6 @@ footer a {
   </div>
 </div>
 
-<div class="card" data-search="vocabulary শব্দভাণ্ডার">
-  <div class="cover"><div class="cover-placeholder">VOCABULARY</div></div>
-  <h4>Vocabulary</h4>
-  <p>শব্দভাণ্ডার</p>
-  <div class="card-links">
-    <a class="open-link" href="downloadlink.html">PDF খুলুন</a>
-    <a class="video-link" href="videos/vocabulary.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
-  </div>
-</div>
-
 </div>
 </section>
 
@@ -683,16 +653,6 @@ footer a {
   <div class="card-links">
     <a class="open-link" href="download.html">PDF খুলুন</a>
     <a class="video-link" href="videos/sports.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
-  </div>
-</div>
-
-<div class="card" data-search="monthly mcq মাসভিত্তিক প্রশ্ন">
-  <div class="cover"><div class="cover-placeholder">MONTHLY<br>MCQ</div></div>
-  <h4>Monthly MCQ</h4>
-  <p>মাসভিত্তিক প্রশ্ন</p>
-  <div class="card-links">
-    <a class="open-link" href="download.html">PDF খুলুন</a>
-    <a class="video-link" href="videos/monthly-mcq.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
   </div>
 </div>
 
@@ -744,16 +704,6 @@ footer a {
   </div>
 </div>
 
-<div class="card" data-search="reasoning mcq অনুশীলনী">
-  <div class="cover"><div class="cover-placeholder">REASONING<br>MCQ</div></div>
-  <h4>Reasoning MCQ</h4>
-  <p>অনুশীলনী</p>
-  <div class="card-links">
-    <a class="open-link" href="download.html">PDF খুলুন</a>
-    <a class="video-link" href="videos/reasoning-mcq.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
-  </div>
-</div>
-
 </div>
 </section>
 
@@ -802,16 +752,6 @@ footer a {
   </div>
 </div>
 
-<div class="card" data-search="pdf notes নোট">
-  <div class="cover"><div class="cover-placeholder">PDF NOTES</div></div>
-  <h4>PDF Notes</h4>
-  <p>ডাউনলোডযোগ্য নোট</p>
-  <div class="card-links">
-    <a class="open-link" href="files/notes.pdf" target="_blank" rel="noopener">PDF খুলুন</a>
-    <a class="video-link" href="videos/notes.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
-  </div>
-</div>
-
 </div>
 </section>
 
@@ -846,7 +786,8 @@ classes.forEach(classNo => {
   const grid = document.createElement("div");
   grid.className = "card-grid";
 
-  for (let bookNo = 1; bookNo <= 5; bookNo++) {
+  /* ONLY 4 BOOK CARDS PER CLASS */
+  for (let bookNo = 1; bookNo <= 4; bookNo++) {
     const card = document.createElement("div");
     card.className = "card";
 
