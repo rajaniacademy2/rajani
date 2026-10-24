@@ -10,10 +10,10 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVF2CK9X85"></script>
 <script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-ZVF2CK9X85');
+window.dataLayer = window.dataLayer || [];
+function gtag(){window.dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZVF2CK9X85');
 </script>
 
 <style>
@@ -25,7 +25,7 @@ header img{width:60px;max-height:70px;object-fit:contain}
 header h1{font-size:30px;margin:5px}
 header p{font-size:13px;line-height:1.6}
 
-nav{background:#ffeb00;position:relative;z-index:20}
+nav{background:#ffeb00;position:relative;z-index:10}
 .menu{list-style:none;display:flex;flex-wrap:wrap;justify-content:center}
 .menu li{position:relative}
 .menu a{display:block;padding:11px 9px;text-decoration:none;color:#0808c9;font-size:13px;font-weight:bold}
@@ -34,31 +34,162 @@ nav{background:#ffeb00;position:relative;z-index:20}
 .dropdown-content a{color:#222;font-weight:normal}
 .dropdown:hover>.dropdown-content,.dropdown:focus-within>.dropdown-content{display:block}
 
-.search-area{max-width:650px;margin:18px auto;padding:0 12px;display:flex;gap:8px}
-.search-area input{flex:1;min-width:0;padding:12px;border:1px solid #aab8ce;border-radius:5px;font-size:15px}
-.search-area button{padding:11px 18px;border:0;border-radius:5px;background:#0808c9;color:white;font-weight:bold;cursor:pointer}
-.search-area button:hover{background:#064c94}
-#search-status{text-align:center;margin:-8px 10px 12px;color:#123e86;font-size:14px}
+main{padding:12px 10px 20px}
+.section-heading{text-align:center;background:#123e86;color:white;padding:12px 5px;margin:8px 0 15px;border-radius:6px;font-size:25px}
+.class-section,.subject-section{margin-bottom:24px}
+.class-heading{text-align:center;background:#087dcc;color:white;padding:9px;margin-bottom:10px;border-radius:5px;font-size:19px}
 
-main{padding:12px 10px 24px}
-.section-heading{text-align:center;background:#123e86;color:white;padding:12px 5px;margin:8px 0 18px;border-radius:6px;font-size:25px}
-.class-section,.subject-section{margin-bottom:28px}
-.class-heading{text-align:center;background:#087dcc;color:white;padding:11px;margin-bottom:15px;border-radius:6px;font-size:20px}
+/* Desktop: প্রতি সারিতে 4টি কার্ড */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+  align-items:stretch
+}
 
-/* DESKTOP AND TABLET: 4 CARDS IN EACH ROW */
-.card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+/* Flip card */
+.card{
+  height:390px;
+  min-width:0;
+  position:relative;
+  overflow:visible;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  perspective:1100px;
+  cursor:pointer
+}
+.card .flip-inner{
+  position:relative;
+  width:100%;
+  height:100%;
+  transform-style:preserve-3d;
+  transition:transform .7s cubic-bezier(.2,.75,.25,1);
+  border-radius:16px
+}
+.card.is-flipped .flip-inner{transform:rotateY(180deg)}
 
-/* SCHOOL MATERIAL CARDS */
-.card{min-width:0;background:white;border:1px solid #d0d9e8;border-radius:8px;overflow:hidden;text-align:center;box-shadow:0 3px 9px #0001}
-.cover{height:180px;background:#f4f7fc;display:flex;align-items:center;justify-content:center;padding:8px}
+.card .flip-front,.card .flip-back{
+  position:absolute;
+  inset:0;
+  height:100%;
+  width:100%;
+  border-radius:16px;
+  overflow:hidden;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:14px 12px 13px;
+  box-shadow:0 8px 20px #152b5a55;
+  border:3px solid #fff
+}
+.card .flip-front{
+  background:linear-gradient(135deg,#fff700 0%,#ff8a00 24%,#ff3cac 49%,#784bff 73%,#00e5ff 100%);
+  color:#10265c
+}
+.card .flip-back{
+  transform:rotateY(180deg);
+  background:linear-gradient(135deg,#ff1744 0%,#ff9100 25%,#ff00c8 52%,#651fff 77%,#00c8ff 100%);
+  color:white;
+  justify-content:center
+}
+
+.cover{
+  height:180px;
+  background:#f4f7fc;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px
+}
 .cover img{width:100%;height:100%;object-fit:contain}
-.cover-placeholder{font-size:15px;font-weight:bold;color:#123e86;text-align:center;line-height:1.7;overflow-wrap:anywhere}
-.card h4{padding:8px 3px 4px;color:#123e86;font-size:14px}
-.card p{font-size:12px;padding:3px 5px;line-height:1.5}
-.card a.open-link{display:inline-block;margin:7px 3px 10px;padding:8px 10px;background:#087dcc;color:white;text-decoration:none;border-radius:4px;font-size:12px}
-.card a.open-link:hover{background:#064c94}
+.cover-placeholder{
+  font-size:15px;
+  font-weight:bold;
+  color:#123e86;
+  text-align:center;
+  line-height:1.7
+}
 
-/* SUBJECT HEADING COLORS */
+.card .flip-front .cover{
+  height:185px;
+  width:100%;
+  flex:0 0 185px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#ffffffd9,#d5faffd9);
+  padding:8px;
+  overflow:hidden
+}
+.card .flip-front .cover img{width:100%;height:100%;object-fit:contain}
+.card .flip-front .cover-placeholder{
+  font-size:17px;
+  color:#092b85;
+  line-height:1.5;
+  text-shadow:0 1px 0 #fff
+}
+.card .flip-front h4{
+  color:#082b7a;
+  font-size:15px;
+  line-height:1.35;
+  padding:9px 3px 4px
+}
+.card .flip-front p{
+  color:#15264a;
+  font-size:12px;
+  line-height:1.45;
+  padding:3px 4px 8px
+}
+.card .flip-back h4{
+  color:white;
+  font-size:18px;
+  line-height:1.4;
+  padding:10px 4px;
+  text-shadow:0 2px 4px #630024
+}
+.card .flip-back p{
+  color:white;
+  font-size:13px;
+  line-height:1.6;
+  padding:5px 8px 15px
+}
+
+.card:hover .flip-front,.card:hover .flip-back{
+  box-shadow:0 0 0 3px #fff,0 0 18px #ff00d4,0 0 30px #00d9ff;
+  filter:saturate(1.12)
+}
+
+.card .flip-front a.open-link,.card .flip-back a.open-link{
+  display:block!important;
+  position:relative;
+  margin:auto 0 0!important;
+  padding:11px 12px!important;
+  width:100%;
+  max-width:190px;
+  background:#071a75!important;
+  color:#fff!important;
+  border:2px solid white;
+  border-radius:30px!important;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:13px!important;
+  box-shadow:0 4px 0 #00104c;
+  z-index:2
+}
+.card .flip-back a.open-link{
+  background:#fff!important;
+  color:#b00036!important;
+  box-shadow:0 4px 0 #650020
+}
+.card .flip-front a.open-link:hover,.card .flip-back a.open-link:hover{
+  filter:brightness(1.1);
+  transform:translateY(-1px)
+}
+.card:focus-visible{outline:4px solid #111;outline-offset:4px;border-radius:16px}
+.card .flip-hint{font-size:11px;font-weight:bold;opacity:.8;margin-top:7px}
+
 .subject-math .class-heading{background:#087b43}
 .subject-gk .class-heading{background:#a85b00}
 .subject-english .class-heading{background:#7137a5}
@@ -66,81 +197,42 @@ main{padding:12px 10px 24px}
 .subject-reasoning .class-heading{background:#166d78}
 .subject-practice .class-heading{background:#444}
 
-/* 3D FLIP CARDS: COMPETITIVE EXAM MATERIALS */
-.subject-section .card{background:transparent;border:0;border-radius:14px;overflow:visible;box-shadow:none;perspective:1200px}
-.flip-card{width:100%;height:370px;perspective:1200px;cursor:pointer}
-.flip-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.2,.7,.3,1);border-radius:14px}
-
-@media(hover:hover){
- .subject-section .card:hover .flip-inner{transform:rotateY(180deg)}
-}
-.subject-section .card.is-flipped .flip-inner{transform:rotateY(180deg)}
-
-.flip-front,.flip-back{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;border-radius:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 8px 18px #102b5540;border:2px solid #ffd700}
-
-/* FRONT COVER */
-.flip-front{display:flex;flex-direction:column;background:linear-gradient(145deg,#fffdf1,#ffe56b,#ffbd16);padding:12px;align-items:center;text-align:center}
-.flip-cover{width:100%;height:235px;border:2px solid #fff4a3;border-radius:9px;background:linear-gradient(145deg,#123e86,#087dcc);display:flex;align-items:center;justify-content:center;padding:12px;color:white;text-align:center;box-shadow:inset 0 0 15px #0003}
-.flip-cover .cover-placeholder{color:white;font-size:21px;line-height:1.7}
-.flip-front h4{color:#123e86;font-size:17px;line-height:1.5;padding:12px 3px 5px}
-.flip-front .flip-hint{color:#5b4500;font-size:12px;font-weight:bold;margin-top:auto;padding:5px 0 2px}
-
-/* BACK COVER */
-.flip-back{transform:rotateY(180deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px 13px;background:linear-gradient(150deg,#fff9c9,#ffdf36,#ffc107);color:#242000}
-.flip-back .back-icon{font-size:38px;margin-bottom:12px}
-.flip-back h4{font-size:18px;line-height:1.5;color:#123e86;padding:5px 0 10px}
-.flip-back p{font-size:14px;line-height:1.8;padding:5px 0 15px;overflow-wrap:anywhere}
-
-/* YELLOW VIBE PDF BUTTON */
-.subject-section .card a.open-link{display:inline-block;background:#0808c9;color:#ffeb00;border:2px solid #0808c9;border-radius:30px;padding:11px 18px;margin:8px 0;font-size:14px;font-weight:bold;text-decoration:none;box-shadow:0 4px 0 #9a7700;transition:transform .2s,background .2s,color .2s}
-.subject-section .card a.open-link:hover{background:white;color:#0808c9;transform:translateY(-2px)}
-.flip-back .tap-hint{margin-top:12px;font-size:11px;color:#655000}
-
-.subject-math .flip-cover{background:linear-gradient(145deg,#07552e,#12a45c)}
-.subject-gk .flip-cover{background:linear-gradient(145deg,#793800,#e18a12)}
-.subject-english .flip-cover{background:linear-gradient(145deg,#45206c,#9a54ce)}
-.subject-current .flip-cover{background:linear-gradient(145deg,#78182e,#df4769)}
-.subject-reasoning .flip-cover{background:linear-gradient(145deg,#084e58,#1599a6)}
-.subject-practice .flip-cover{background:linear-gradient(145deg,#242424,#555)}
-
-.no-results{text-align:center;padding:25px;color:#b32646;font-weight:bold;display:none}
-footer{background:#111;color:white;text-align:center;padding:12px 5px;font-size:12px;line-height:1.8}
+footer{background:#111;color:white;text-align:center;padding:7px 5px;font-size:12px;line-height:1.6}
 footer a{color:#ffeb00;text-decoration:none}
 
-/* MOBILE: EXACTLY 2 CARDS IN EACH ROW */
+/* Tablet এবং মোবাইল: প্রতি সারিতে 2টি কার্ড */
+@media(max-width:900px){
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .card{height:355px}
+  .card .flip-front .cover{height:155px;flex-basis:155px}
+}
+
 @media(max-width:600px){
- header{padding:8px}
- header h1{font-size:24px}
- header p{font-size:12px}
- .menu a{padding:9px 6px;font-size:11px}
- .dropdown-content{min-width:165px}
- main{padding:10px 7px 20px}
- .section-heading{font-size:20px}
- .class-heading{font-size:17px}
- .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
- .cover{height:150px}
- .card h4{font-size:13px}
- .card a.open-link{font-size:11px;padding:7px}
- .search-area button{padding:10px}
- .subject-section .card{min-height:310px}
- .flip-card{height:310px}
- .flip-front{padding:8px}
- .flip-cover{height:185px;padding:8px}
- .flip-cover .cover-placeholder{font-size:17px}
- .flip-front h4{font-size:14px;padding:9px 2px 4px}
- .flip-front .flip-hint{font-size:10px}
- .flip-back{padding:10px 7px}
- .flip-back .back-icon{font-size:30px;margin-bottom:5px}
- .flip-back h4{font-size:14px;padding:4px 0 6px}
- .flip-back p{font-size:11px;line-height:1.6;padding:4px 0 8px}
- .subject-section .card a.open-link{padding:8px 10px;font-size:11px;margin:5px 0}
- .flip-back .tap-hint{font-size:9px;margin-top:6px}
+  header{padding:8px}
+  header h1{font-size:24px}
+  header p{font-size:12px}
+  .menu a{padding:9px 6px;font-size:11px}
+  .dropdown-content{min-width:165px}
+  main{padding:10px 7px}
+  .section-heading{font-size:20px}
+
+  /* মোবাইলে ঠিক 2টি কার্ড */
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .card{height:340px}
+  .card .flip-front,.card .flip-back{padding:9px 8px 10px;border-width:2px}
+  .card .flip-front .cover{height:140px;flex-basis:140px;padding:5px}
+  .card .flip-front .cover-placeholder{font-size:14px}
+  .card .flip-front h4{font-size:13px;padding:7px 2px 3px}
+  .card .flip-front p{font-size:11px;padding:2px 2px 6px}
+  .card .flip-back h4{font-size:15px}
+  .card .flip-back p{font-size:11px;padding:4px 3px 10px}
+  .card .flip-front a.open-link,.card .flip-back a.open-link{font-size:11px!important;padding:9px 5px!important;max-width:160px}
+  .card .flip-hint{font-size:10px}
 }
 </style>
 </head>
 
 <body>
-
 <header>
   <img src="image/bb578b6a-b866-4c9f-8adf-a4984c9b72d3.png" alt="Rajani Academy Logo">
   <h1>RAJANI ACADEMY</h1>
@@ -148,7 +240,6 @@ footer a{color:#ffeb00;text-decoration:none}
   <p>School Study Materials | Competitive Exam Preparation | MCQ | PDF Notes</p>
 </header>
 
-<!-- ORIGINAL MENU -->
 <nav>
 <ul class="menu">
 <li class="dropdown">
@@ -205,86 +296,133 @@ footer a{color:#ffeb00;text-decoration:none}
 </ul>
 </nav>
 
-<!-- SEARCH -->
-<div class="search-area">
-<input type="search" id="searchInput" placeholder="বই, ক্লাস বা বিষয়ের নাম লিখে খুঁজুন..." aria-label="বই খুঁজুন">
-<button type="button" id="searchButton">Search</button>
-</div>
-<p id="search-status" aria-live="polite"></p>
-
 <main>
 <h2 class="section-heading">স্কুলের স্টাডি ম্যাটেরিয়ালস</h2>
 <div id="school-materials"></div>
 
 <h2 class="section-heading">চাকরির পরীক্ষার স্টাডি ম্যাটেরিয়ালস</h2>
-<div id="job-materials"></div>
 
-<p id="no-results" class="no-results">দুঃখিত! কোনো মিল পাওয়া যায়নি। অন্য নাম লিখে খুঁজুন।</p>
+<section class="subject-section subject-math">
+<h3 class="class-heading">1. MATH — গণিত</h3>
+<div class="card-grid">
+<div class="card"><div class="cover"><div class="cover-placeholder">MATH<br>গণিতের বই</div></div><h4>Math Study Materials</h4><p>গণিতের MCQ ও অঙ্ক</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">ARITHMETIC<br>পাটিগণিত</div></div><h4>Arithmetic</h4><p>লাভ-ক্ষতি, শতকরা, সুদ</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">LCM & HCF</div></div><h4>LCM & HCF</h4><p>MCQ অনুশীলন</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">TIME & WORK</div></div><h4>Time and Work</h4><p>গুরুত্বপূর্ণ অঙ্ক</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
+</div>
+</section>
+
+<section class="subject-section subject-gk">
+<h3 class="class-heading">2. GK — সাধারণ জ্ঞান</h3>
+<div class="card-grid">
+<div class="card"><div class="cover"><div class="cover-placeholder">GENERAL<br>KNOWLEDGE</div></div><h4>General Knowledge</h4><p>সাধারণ জ্ঞান</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">INDIAN<br>HISTORY</div></div><h4>Indian History</h4><p>ভারতের ইতিহাস</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">GEOGRAPHY</div></div><h4>Geography</h4><p>ভূগোল</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">POLITY</div></div><h4>Indian Polity</h4><p>ভারতীয় সংবিধান</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
+</div>
+</section>
+
+<section class="subject-section subject-english">
+<h3 class="class-heading">3. ENGLISH — ইংরেজি</h3>
+<div class="card-grid">
+<div class="card"><div class="cover"><div class="cover-placeholder">ENGLISH<br>GRAMMAR</div></div><h4>English Grammar</h4><p>Grammar MCQ</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">TENSE</div></div><h4>Tense</h4><p>নিয়ম ও অনুশীলন</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">VOICE</div></div><h4>Voice Change</h4><p>Active ও Passive</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">NARRATION</div></div><h4>Narration</h4><p>Direct ও Indirect</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
+</div>
+</section>
+
+<section class="subject-section subject-current">
+<h3 class="class-heading">4. Current Affairs — সাম্প্রতিক ঘটনা</h3>
+<div class="card-grid">
+<div class="card"><div class="cover"><div class="cover-placeholder">CURRENT<br>AFFAIRS</div></div><h4>Current Affairs</h4><p>সাম্প্রতিক ঘটনা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">IMPORTANT<br>DAYS</div></div><h4>Important Days</h4><p>দিবস ও থিম</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">AWARDS</div></div><h4>Awards and Honours</h4><p>পুরস্কার ও সম্মান</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">SPORTS</div></div><h4>Sports Current Affairs</h4><p>খেলাধুলার খবর</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+</div>
+</section>
+
+<section class="subject-section subject-reasoning">
+<h3 class="class-heading">5. Reasoning — যুক্তি ও মানসিক দক্ষতা</h3>
+<div class="card-grid">
+<div class="card"><div class="cover"><div class="cover-placeholder">REASONING</div></div><h4>Reasoning Basics</h4><p>যুক্তির প্রাথমিক ধারণা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">NUMBER<br>SERIES</div></div><h4>Number Series</h4><p>সংখ্যার ধারা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">ANALOGY</div></div><h4>Analogy</h4><p>সাদৃশ্য নির্ণয়</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">CODING<br>DECODING</div></div><h4>Coding-Decoding</h4><p>কোড নির্ণয়</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+</div>
+</section>
+
+<section class="subject-section subject-practice">
+<h3 class="class-heading">6. Practice Sets — পরীক্ষার অনুশীলন</h3>
+<div class="card-grid">
+<div class="card"><div class="cover"><div class="cover-placeholder">WBSSC<br>GROUP C</div></div><h4>WBSSC Group C</h4><p>মডেল প্রশ্নপত্র</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">SSC / PSC</div></div><h4>SSC / PSC Practice</h4><p>পরীক্ষার অনুশীলন</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">RRB / NTPC</div></div><h4>RRB / NTPC</h4><p>মডেল প্রশ্ন</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
+<div class="card"><div class="cover"><div class="cover-placeholder">OMR TEST</div></div><h4>OMR Practice</h4><p>সময় ধরে অনুশীলন</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
+</div>
+</section>
 </main>
 
 <footer>
 <p><strong>RAJANI ACADEMY</strong> | Belda, West Medinipur</p>
 <p>যোগাযোগ: <a href="tel:7384998077">7384998077</a></p>
-<p>© <span id="current-year">2026</span> RAJANI ACADEMY. All Rights Reserved.</p>
+<p>© 2026 RAJANI ACADEMY. All Rights Reserved.</p>
 </footer>
 
 <script>
-/* CLASS 5 TO 10: প্রতিটি ক্লাসে 4টি বই */
-const classes=[5,6,7,8,9,10];
-const schoolContainer=document.getElementById("school-materials");
+/* Class 5–10: প্রতি শ্রেণিতে মোট 4টি বই */
+const classes = [5,6,7,8,9,10];
+const schoolContainer = document.getElementById("school-materials");
 
-classes.forEach(function(classNo){
-  const section=document.createElement("section");
-  section.className="class-section";
+classes.forEach(classNo => {
+  const section = document.createElement("section");
+  section.className = "class-section";
 
-  const heading=document.createElement("h3");
-  heading.className="class-heading";
-  heading.textContent="Class "+classNo+" — "+classNo+"ম শ্রেণির বই";
+  const heading = document.createElement("h3");
+  heading.className = "class-heading";
+  heading.textContent = "Class " + classNo + " — " + classNo + "ম শ্রেণির বই";
   section.appendChild(heading);
 
-  const grid=document.createElement("div");
-  grid.className="card-grid";
+  const grid = document.createElement("div");
+  grid.className = "card-grid";
 
-  for(let bookNo=1;bookNo<=4;bookNo++){
-    const card=document.createElement("div");
-    card.className="card";
+  for (let bookNo = 1; bookNo <= 4; bookNo++) {
+    const card = document.createElement("div");
+    card.className = "card";
 
-    const cover=document.createElement("div");
-    cover.className="cover";
+    const cover = document.createElement("div");
+    cover.className = "cover";
 
-    const img=document.createElement("img");
+    const img = document.createElement("img");
+    img.src = "image/books/class" + classNo + "/book" + bookNo + ".jpg";
+    img.alt = "Class " + classNo + " Book " + bookNo;
 
-    /* এখানে নিজের বইয়ের ছবির পাথ বসান */
-    img.src="image/Rajani Academy Class 5 Math Practice Set.png";
-    img.alt="Class "+classNo+" Book "+bookNo;
-
-    const placeholder=document.createElement("div");
-    placeholder.className="cover-placeholder";
-    placeholder.textContent="CLASS "+classNo+" BOOK "+bookNo;
+    const placeholder = document.createElement("div");
+    placeholder.className = "cover-placeholder";
+    placeholder.textContent = "CLASS " + classNo + " BOOK " + bookNo;
     cover.appendChild(placeholder);
 
-    img.onload=function(){
-      cover.innerHTML="";
+    img.onload = () => {
+      cover.innerHTML = "";
       cover.appendChild(img);
     };
 
     card.appendChild(cover);
 
-    const title=document.createElement("h4");
-    title.textContent="Class "+classNo+" Book "+bookNo;
+    const title = document.createElement("h4");
+    title.textContent = "Class " + classNo + " Book " + bookNo;
     card.appendChild(title);
 
-    const desc=document.createElement("p");
-    desc.textContent="স্টাডি ম্যাটেরিয়ালস ও অনুশীলন";
+    const desc = document.createElement("p");
+    desc.textContent = "স্টাডি ম্যাটেরিয়ালস ও অনুশীলন";
     card.appendChild(desc);
 
-    /* এখানে নিজের PDF ফাইলের পাথ বসান */
-    const link=document.createElement("a");
-    link.className="open-link";
-    link.href="books/class"+classNo+"/book"+bookNo+".pdf";
-    link.textContent="PDF খুলুন";
-    link.target="_blank";
-    link.rel="noopener";
+    const link = document.createElement("a");
+    link.className = "open-link";
+    link.href = "books/class" + classNo + "/book" + bookNo + ".pdf";
+    link.textContent = "PDF খুলুন";
+    link.target = "_blank";
+    link.rel = "noopener";
     card.appendChild(link);
 
     grid.appendChild(card);
@@ -294,188 +432,81 @@ classes.forEach(function(classNo){
   schoolContainer.appendChild(section);
 });
 
-/* চাকরির পরীক্ষার বিষয় ও প্রতি বিভাগে 4টি বই */
-const subjects=[
- {
-  cls:"subject-math",heading:"1. MATH — গণিত",
-  books:[
-   ["MATH","Math Study Materials","গণিতের MCQ ও অঙ্ক","contact.html"],
-   ["ARITHMETIC","Arithmetic","লাভ-ক্ষতি, শতকরা, সুদ","contact.html"],
-   ["LCM & HCF","LCM & HCF","MCQ অনুশীলন","contact.html"],
-   ["TIME & WORK","Time and Work","গুরুত্বপূর্ণ অঙ্ক","contact.html"]
-  ]
- },
- {
-  cls:"subject-gk",heading:"2. GK — সাধারণ জ্ঞান",
-  books:[
-   ["GENERAL KNOWLEDGE","General Knowledge","সাধারণ জ্ঞান","mission.html"],
-   ["INDIAN HISTORY","Indian History","ভারতের ইতিহাস","mission.html"],
-   ["GEOGRAPHY","Geography","ভূগোল","mission.html"],
-   ["POLITY","Indian Polity","ভারতীয় সংবিধান","mission.html"]
-  ]
- },
- {
-  cls:"subject-english",heading:"3. ENGLISH — ইংরেজি",
-  books:[
-   ["ENGLISH GRAMMAR","English Grammar","Grammar MCQ","downloadlink.html"],
-   ["TENSE","Tense","নিয়ম ও অনুশীলন","downloadlink.html"],
-   ["VOICE","Voice Change","Active ও Passive","downloadlink.html"],
-   ["NARRATION","Narration","Direct ও Indirect","downloadlink.html"]
-  ]
- },
- {
-  cls:"subject-current",heading:"4. Current Affairs — সাম্প্রতিক ঘটনা",
-  books:[
-   ["CURRENT AFFAIRS","Current Affairs","সাম্প্রতিক ঘটনা","download.html"],
-   ["IMPORTANT DAYS","Important Days","দিবস ও থিম","download.html"],
-   ["AWARDS","Awards and Honours","পুরস্কার ও সম্মান","download.html"],
-   ["SPORTS","Sports Current Affairs","খেলাধুলার খবর","download.html"]
-  ]
- },
- {
-  cls:"subject-reasoning",heading:"5. Reasoning — যুক্তি ও মানসিক দক্ষতা",
-  books:[
-   ["REASONING","Reasoning Basics","যুক্তির প্রাথমিক ধারণা","download.html"],
-   ["NUMBER SERIES","Number Series","সংখ্যার ধারা","download.html"],
-   ["ANALOGY","Analogy","সাদৃশ্য নির্ণয়","download.html"],
-   ["CODING DECODING","Coding-Decoding","কোড নির্ণয়","download.html"]
-  ]
- },
- {
-  cls:"subject-practice",heading:"6. Practice Sets — পরীক্ষার অনুশীলন",
-  books:[
-   ["WBSSC GROUP C","WBSSC Group C","মডেল প্রশ্নপত্র","download.html"],
-   ["SSC / PSC","SSC / PSC Practice","পরীক্ষার অনুশীলন","download.html"],
-   ["RRB / NTPC","RRB / NTPC","মডেল প্রশ্ন","download.html"],
-   ["OMR TEST","OMR Practice","সময় ধরে অনুশীলন","download.html"]
-  ]
- }
-];
+/* সব কার্ডে Flip Effect */
+function makeFlipCards(){
+  document.querySelectorAll('.card').forEach((card,index)=>{
+    if(card.querySelector('.flip-inner')) return;
 
-const jobContainer=document.getElementById("job-materials");
+    const cover=card.querySelector('.cover');
+    const title=card.querySelector('h4');
+    const desc=card.querySelector('p');
+    const oldLink=card.querySelector('a.open-link');
 
-subjects.forEach(function(subject){
-  const section=document.createElement("section");
-  section.className="subject-section "+subject.cls;
+    const titleText=title ? title.textContent.trim() : 'Study Materials';
+    const descText=desc ? desc.textContent.trim() : 'স্টাডি ম্যাটেরিয়ালস ও অনুশীলন';
+    const href=oldLink ? oldLink.getAttribute('href') : 'download.html';
+    const linkText=oldLink ? oldLink.textContent.trim() : 'PDF খুলুন';
+    const coverHTML=cover ? cover.outerHTML : '<div class="cover"><div class="cover-placeholder">RAJANI ACADEMY</div></div>';
 
-  const heading=document.createElement("h3");
-  heading.className="class-heading";
-  heading.textContent=subject.heading;
-  section.appendChild(heading);
-
-  const grid=document.createElement("div");
-  grid.className="card-grid";
-
-  subject.books.forEach(function(book){
-    const card=document.createElement("div");
-    card.className="card";
+    const colors=['#ff00a8','#00d9ff','#ff6d00','#7c4dff','#00c853','#ff1744','#ffea00','#00b0ff'];
+    const color=colors[index%colors.length];
+    const buttonText=linkText==='বই খুলুন'?'বই খুলুন':linkText==='সেট খুলুন'?'সেট খুলুন':'PDF খুলুন';
 
     card.innerHTML=`
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front">
-            <div class="flip-cover">
-              <div class="cover-placeholder">${book[0]}</div>
-            </div>
-            <h4>${book[1]}</h4>
-            <div class="flip-hint">↻ বইটি উল্টে দেখুন</div>
-          </div>
-          <div class="flip-back">
-            <div class="back-icon">📘</div>
-            <h4>${book[1]}</h4>
-            <p>${book[2]}</p>
-            <a class="open-link" href="${book[3]}" target="_blank" rel="noopener">📥 PDF খুলুন</a>
-            <div class="tap-hint">কার্ডের সামনে ফিরতে আবার টাচ করুন</div>
-          </div>
+      <div class="flip-inner">
+        <div class="flip-front">
+          ${coverHTML}
+          <h4>${titleText}</h4>
+          <p>${descText}</p>
+          <a class="open-link" href="${href}" target="_blank" rel="noopener">📥 ${buttonText}</a>
+          <span class="flip-hint">🔄 পিছনের দিক দেখতে কার্ডে চাপ দিন</span>
         </div>
-      </div>
-    `;
+        <div class="flip-back" style="background:linear-gradient(135deg,${color} 0%,#ff9100 28%,#ff00c8 55%,#651fff 78%,#00c8ff 100%)">
+          <h4>${titleText}</h4>
+          <p>${descText}<br>RAJANI ACADEMY<br>পড়ুন, অনুশীলন করুন, সফল হোন।</p>
+          <a class="open-link" href="${href}" target="_blank" rel="noopener">📥 ${buttonText}</a>
+          <span class="flip-hint">🔄 সামনের দিকে ফিরতে কার্ডে চাপ দিন</span>
+        </div>
+      </div>`;
 
-    card.setAttribute("tabindex","0");
-    card.setAttribute("role","button");
-    card.setAttribute("aria-label",book[1]+" — কার্ড উল্টে দেখুন");
-
-    card.addEventListener("click",function(event){
-      if(event.target.closest("a"))return;
-      card.classList.toggle("is-flipped");
-    });
-
-    card.addEventListener("keydown",function(event){
-      if(event.key==="Enter"||event.key===" "){
-        if(event.target.closest("a"))return;
-        event.preventDefault();
-        card.classList.toggle("is-flipped");
-      }
-    });
-
-    grid.appendChild(card);
+    card.setAttribute('tabindex','0');
+    card.setAttribute('role','button');
+    card.setAttribute('aria-label',titleText+' — কার্ড উল্টাতে ক্লিক করুন');
   });
-
-  section.appendChild(grid);
-  jobContainer.appendChild(section);
-});
-
-/* SEARCH: সব ক্লাস ও সব বিষয় */
-const searchInput=document.getElementById("searchInput");
-const searchButton=document.getElementById("searchButton");
-const searchStatus=document.getElementById("search-status");
-const noResults=document.getElementById("no-results");
-
-function searchBooks(){
-  const query=searchInput.value.trim().toLowerCase();
-  const cards=document.querySelectorAll(".card");
-  const sections=document.querySelectorAll(".class-section,.subject-section");
-  let found=0;
-
-  cards.forEach(function(card){
-    const matches=card.innerText.toLowerCase().includes(query);
-    card.style.display=matches?"":"none";
-    if(matches)found++;
-  });
-
-  sections.forEach(function(section){
-    const visible=Array.from(section.querySelectorAll(".card"))
-      .some(function(card){return card.style.display!=="none";});
-    section.style.display=visible?"":"none";
-  });
-
-  document.querySelectorAll("main > .section-heading").forEach(function(heading){
-    heading.style.display="";
-  });
-
-  noResults.style.display=found===0?"block":"none";
-  searchStatus.textContent=query===""?"":"মোট "+found+"টি কার্ড পাওয়া গেছে।";
 }
+makeFlipCards();
 
-searchButton.addEventListener("click",searchBooks);
-searchInput.addEventListener("keydown",function(event){
-  if(event.key==="Enter")searchBooks();
+/* কার্ডে ক্লিক করলে Flip হবে; PDF বাটনে ক্লিক করলে PDF খুলবে */
+document.addEventListener('click',function(event){
+  const card=event.target.closest('.card');
+  if(!card || event.target.closest('a')) return;
+  card.classList.toggle('is-flipped');
 });
-searchInput.addEventListener("input",function(){
-  if(this.value.trim()==="")searchBooks();
+
+document.addEventListener('keydown',function(event){
+  if((event.key==='Enter'||event.key===' ') && event.target.classList.contains('card')){
+    event.preventDefault();
+    event.target.classList.toggle('is-flipped');
+  }
 });
 
-/* বর্তমান বছর */
-document.getElementById("current-year").textContent=new Date().getFullYear();
+/* Google Analytics: study material clicks */
+document.addEventListener('click',function(event){
+  const link=event.target.closest('a.open-link');
+  if(!link) return;
 
-/* GOOGLE ANALYTICS: বই/PDF ক্লিক */
-document.addEventListener("click",function(event){
-  const link=event.target.closest("a.open-link");
-  if(!link)return;
+  if(typeof window.gtag==='function'){
+    const card=link.closest('.card');
+    const title=card && card.querySelector('h4');
 
-  if(typeof window.gtag==="function"){
-    const card=link.closest(".card");
-    const title=card?card.querySelector("h4"):null;
-
-    window.gtag("event","study_material_click",{
-      link_text:link.textContent.trim(),
+    window.gtag('event','study_material_click',{
+      link_text:(link.textContent||'').trim(),
       link_url:link.href,
-      material_title:title?title.textContent.trim():"",
+      material_title:title ? title.textContent.trim() : '',
       page_location:window.location.href
     });
   }
 });
 </script>
-
 </body>
 </html>
