@@ -17,83 +17,369 @@ gtag('config', 'G-ZVF2CK9X85');
 </script>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,"Noto Sans Bengali",sans-serif;background:#eaf3ff;color:#222}
-header{background:#0808c9;color:white;text-align:center;padding:10px}
-header img{width:60px;max-height:70px;object-fit:contain}
-header h1{font-size:30px;margin:5px}
-header p{font-size:13px;line-height:1.6}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-nav{background:#ffeb00;position:relative;z-index:10}
-.menu{list-style:none;display:flex;flex-wrap:wrap;justify-content:center}
-.menu li{position:relative}
-.menu a{display:block;padding:11px 9px;text-decoration:none;color:#0808c9;font-size:13px;font-weight:bold}
-.menu a:hover{background:white;color:red}
-.dropdown-content{display:none;position:absolute;top:100%;left:0;min-width:190px;background:white;box-shadow:0 4px 10px #0003;list-style:none}
-.dropdown-content a{color:#222;font-weight:normal}
-.dropdown:hover>.dropdown-content,.dropdown:focus-within>.dropdown-content{display:block}
+body {
+  font-family: Arial, "Noto Sans Bengali", sans-serif;
+  background: #eaf3ff;
+  color: #222;
+}
 
-main{padding:12px 10px 20px}
-.section-heading{text-align:center;background:#123e86;color:white;padding:12px 5px;margin:8px 0 15px;border-radius:6px;font-size:25px}
-.class-section,.subject-section{margin-bottom:24px}
-.class-heading{text-align:center;background:#087dcc;color:white;padding:9px;margin-bottom:10px;border-radius:5px;font-size:19px}
+/* HEADER */
+header {
+  background: #0808c9;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+header img {
+  width: 60px;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+header h1 {
+  font-size: 30px;
+  margin: 5px;
+}
+
+header p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* NAVIGATION */
+nav {
+  background: #ffeb00;
+  position: relative;
+  z-index: 10;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  padding: 11px 9px;
+  text-decoration: none;
+  color: #0808c9;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  background: white;
+  color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 190px;
+  background: white;
+  box-shadow: 0 4px 10px #0003;
+  list-style: none;
+}
+
+.dropdown-content a {
+  color: #222;
+  font-weight: normal;
+}
+
+.dropdown:hover > .dropdown-content,
+.dropdown:focus-within > .dropdown-content {
+  display: block;
+}
+
+/* MAIN CONTENT */
+main {
+  padding: 12px 10px 20px;
+}
+
+.section-heading {
+  text-align: center;
+  background: #123e86;
+  color: white;
+  padding: 12px 5px;
+  margin: 8px 0 15px;
+  border-radius: 6px;
+  font-size: 25px;
+}
+
+.class-section,
+.subject-section {
+  margin-bottom: 24px;
+}
+
+.class-heading {
+  text-align: center;
+  background: #087dcc;
+  color: white;
+  padding: 9px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 19px;
+}
 
 /* SEARCH BOX */
-.search-area{max-width:700px;margin:15px auto 22px;text-align:center}
-.search-area label{display:block;font-size:18px;font-weight:bold;color:#123e86;margin-bottom:8px}
-#bookSearch{width:100%;padding:13px 15px;border:2px solid #087dcc;border-radius:8px;font-size:16px;outline:none}
-#bookSearch:focus{border-color:#0808c9;box-shadow:0 0 5px #087dcc66}
-#searchCount{margin-top:8px;font-size:13px;color:#333}
+.search-area {
+  max-width: 700px;
+  margin: 15px auto 22px;
+  text-align: center;
+}
 
-/* CARDS */
-.card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.card{min-width:0;background:white;border:1px solid #d0d9e8;border-radius:8px;overflow:hidden;text-align:center;box-shadow:0 2px 6px #0001}
-.cover{height:180px;background:#f4f7fc;display:flex;align-items:center;justify-content:center;padding:8px}
-.cover img{width:100%;height:100%;object-fit:contain}
-.cover-placeholder{font-size:15px;font-weight:bold;color:#123e86;text-align:center;line-height:1.7}
-.card h4{padding:8px 3px 4px;color:#123e86;font-size:14px}
-.card p{font-size:12px;padding:3px 5px;line-height:1.5}
+.search-area label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #123e86;
+  margin-bottom: 8px;
+}
+
+#bookSearch {
+  width: 100%;
+  padding: 13px 15px;
+  border: 2px solid #087dcc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+#bookSearch:focus {
+  border-color: #0808c9;
+  box-shadow: 0 0 5px #087dcc66;
+}
+
+#searchCount {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #333;
+}
+
+/* CARD GRID: COMPUTER = 4 CARDS PER ROW */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* CARD DESIGN */
+.card {
+  min-width: 0;
+  background: white;
+  border: 1px solid #d0d9e8;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 6px #0001;
+}
+
+.cover {
+  height: 180px;
+  background: #f4f7fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cover-placeholder {
+  font-size: 15px;
+  font-weight: bold;
+  color: #123e86;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.card h4 {
+  padding: 8px 3px 4px;
+  color: #123e86;
+  font-size: 14px;
+}
+
+.card p {
+  font-size: 12px;
+  padding: 3px 5px;
+  line-height: 1.5;
+}
 
 /* PDF AND VIDEO LINKS */
-.card-links{display:flex;justify-content:center;align-items:center;gap:5px;flex-wrap:wrap;padding:5px 3px 10px}
-.card a.open-link{display:inline-block;padding:8px 10px;background:#087dcc;color:white;text-decoration:none;border-radius:4px;font-size:12px}
-.card a.video-link{display:inline-block;padding:8px 10px;background:#d92332;color:white;text-decoration:none;border-radius:4px;font-size:12px}
-.card a.open-link:hover{background:#064c94}
-.card a.video-link:hover{background:#a91521}
-
-.subject-math .class-heading{background:#087b43}
-.subject-gk .class-heading{background:#a85b00}
-.subject-english .class-heading{background:#7137a5}
-.subject-current .class-heading{background:#b32646}
-.subject-reasoning .class-heading{background:#166d78}
-.subject-practice .class-heading{background:#444}
-
-.no-results{display:none;text-align:center;background:white;padding:20px;border-radius:8px;color:#b32646;margin:15px 0}
-footer{background:#111;color:white;text-align:center;padding:10px 5px;font-size:12px;line-height:1.8}
-footer a{color:#ffeb00;text-decoration:none}
-
-@media(max-width:900px){
- .card-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
- .cover{height:160px}
+.card-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  padding: 5px 3px 10px;
 }
-@media(max-width:600px){
- header{padding:8px}
- header h1{font-size:24px}
- header p{font-size:12px}
- .menu a{padding:9px 6px;font-size:11px}
- .dropdown-content{min-width:165px}
- main{padding:10px 7px}
- .section-heading{font-size:20px}
- .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
- .cover{height:150px}
- .card h4{font-size:13px}
- .card a.open-link,.card a.video-link{font-size:11px;padding:7px 8px}
+
+.card a.open-link {
+  display: inline-block;
+  padding: 8px 10px;
+  background: #087dcc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.card a.video-link {
+  display: inline-block;
+  padding: 8px 10px;
+  background: #d92332;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.card a.open-link:hover {
+  background: #064c94;
+}
+
+.card a.video-link:hover {
+  background: #a91521;
+}
+
+/* SUBJECT COLOURS */
+.subject-math .class-heading {
+  background: #087b43;
+}
+
+.subject-gk .class-heading {
+  background: #a85b00;
+}
+
+.subject-english .class-heading {
+  background: #7137a5;
+}
+
+.subject-current .class-heading {
+  background: #b32646;
+}
+
+.subject-reasoning .class-heading {
+  background: #166d78;
+}
+
+.subject-practice .class-heading {
+  background: #444;
+}
+
+/* NO SEARCH RESULTS */
+.no-results {
+  display: none;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  color: #b32646;
+  margin: 15px 0;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+footer a {
+  color: #ffeb00;
+  text-decoration: none;
+}
+
+/* TABLET: 3 CARDS PER ROW */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cover {
+    height: 160px;
+  }
+}
+
+/* MOBILE: 2 CARDS PER ROW */
+@media (max-width: 600px) {
+  header {
+    padding: 8px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 12px;
+  }
+
+  .menu a {
+    padding: 9px 6px;
+    font-size: 11px;
+  }
+
+  .dropdown-content {
+    min-width: 165px;
+  }
+
+  main {
+    padding: 10px 7px;
+  }
+
+  .section-heading {
+    font-size: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .cover {
+    height: 150px;
+  }
+
+  .card h4 {
+    font-size: 13px;
+  }
+
+  .card a.open-link,
+  .card a.video-link {
+    font-size: 11px;
+    padding: 7px 8px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <img src="image/bb578b6a-b866-4c9f-8adf-a4984c9b72d3.png" alt="Rajani Academy Logo">
   <h1>RAJANI ACADEMY</h1>
@@ -101,274 +387,450 @@ footer a{color:#ffeb00;text-decoration:none}
   <p>School Study Materials | Competitive Exam Preparation | MCQ | PDF Notes</p>
 </header>
 
+<!-- NAVIGATION MENU -->
 <nav>
 <ul class="menu">
+
 <li class="dropdown">
-<a href="#">HOME ▼</a>
-<ul class="dropdown-content">
-<li><a href="GK%20TRIKE%20BOOK.docx">GK TRIKE BOOK</a></li>
-<li><a href="shyam.html">Shyam</a></li>
-<li><a href="about.html">About Us</a></li>
-</ul>
+  <a href="#">HOME ▼</a>
+  <ul class="dropdown-content">
+    <li><a href="GK%20TRIKE%20BOOK.docx">GK TRIKE BOOK</a></li>
+    <li><a href="shyam.html">Shyam</a></li>
+    <li><a href="about.html">About Us</a></li>
+  </ul>
 </li>
 
 <li class="dropdown">
-<a href="#">ENQUIRY FORM ▼</a>
-<ul class="dropdown-content">
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLScSE02EtmUz_ucoO_gb0uOMsr3bOPCK6Kc4MGj6NJ3dpLgLtQ/viewform">Enquiry Details</a></li>
-<li><a href="apply.html">Student Information</a></li>
-<li><a href="apply.html">Course Enquiry</a></li>
-<li><a href="apply.html">Contact Information</a></li>
-</ul>
+  <a href="#">ENQUIRY FORM ▼</a>
+  <ul class="dropdown-content">
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScSE02EtmUz_ucoO_gb0uOMsr3bOPCK6Kc4MGj6NJ3dpLgLtQ/viewform">Enquiry Details</a></li>
+    <li><a href="apply.html">Student Information</a></li>
+    <li><a href="apply.html">Course Enquiry</a></li>
+    <li><a href="apply.html">Contact Information</a></li>
+  </ul>
 </li>
 
 <li class="dropdown">
-<a href="#">ADMISSION FORM ▼</a>
-<ul class="dropdown-content">
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfUwa3CleEmQilfRXVH8YK6mjkkPFxR-Tm6NkFNprdtCSK-Vw/viewform?usp=dialog">Admission Details</a></li>
-</ul>
+  <a href="#">ADMISSION FORM ▼</a>
+  <ul class="dropdown-content">
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfUwa3CleEmQilfRXVH8YK6mjkkPFxR-Tm6NkFNprdtCSK-Vw/viewform?usp=dialog">Admission Details</a></li>
+  </ul>
 </li>
 
 <li class="dropdown">
-<a href="#">DEMO STUDY MATERIALS ▼</a>
-<ul class="dropdown-content">
-<li><a href="mission.html">GK</a></li>
-<li><a href="downloadlink.html">ENGLISH</a></li>
-<li><a href="contact.html">MATH</a></li>
-</ul>
+  <a href="#">DEMO STUDY MATERIALS ▼</a>
+  <ul class="dropdown-content">
+    <li><a href="mission.html">GK</a></li>
+    <li><a href="downloadlink.html">ENGLISH</a></li>
+    <li><a href="contact.html">MATH</a></li>
+  </ul>
 </li>
 
 <li class="dropdown">
-<a href="#">DOWNLOAD ▼</a>
-<ul class="dropdown-content">
-<li><a href="download.html">Download Materials</a></li>
-<li><a href="files/notes.pdf" target="_blank" rel="noopener">PDF Notes</a></li>
-<li><a href="files/result.pdf" target="_blank" rel="noopener">Result</a></li>
-</ul>
+  <a href="#">DOWNLOAD ▼</a>
+  <ul class="dropdown-content">
+    <li><a href="download.html">Download Materials</a></li>
+    <li><a href="files/notes.pdf" target="_blank" rel="noopener">PDF Notes</a></li>
+    <li><a href="files/result.pdf" target="_blank" rel="noopener">Result</a></li>
+  </ul>
 </li>
 
 <li class="dropdown">
-<a href="#">GALLERY ▼</a>
-<ul class="dropdown-content">
-<li><a href="photo.html">Photo Gallery</a></li>
-<li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
-</ul>
+  <a href="#">GALLERY ▼</a>
+  <ul class="dropdown-content">
+    <li><a href="photo.html">Photo Gallery</a></li>
+    <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
 </li>
+
 </ul>
 </nav>
 
 <main>
 
-<!-- SEARCH -->
+<!-- SEARCH BOX -->
 <div class="search-area">
-<label for="bookSearch">🔎 বই, ক্লাস বা বিষয় খুঁজুন</label>
-<input type="search" id="bookSearch" placeholder="যেমন: Class 5, Math, English, General Knowledge..." autocomplete="off">
-<p id="searchCount">সব বই দেখতে নিচে স্ক্রল করুন।</p>
+  <label for="bookSearch">🔎 বই, ক্লাস বা বিষয় খুঁজুন</label>
+  <input
+    type="search"
+    id="bookSearch"
+    placeholder="যেমন: Class 5, Math, English, General Knowledge..."
+    autocomplete="off"
+  >
+  <p id="searchCount">সব বই দেখতে নিচে স্ক্রল করুন।</p>
 </div>
 
+<!-- SCHOOL STUDY MATERIALS -->
 <h2 class="section-heading">স্কুলের স্টাডি ম্যাটেরিয়ালস</h2>
 <div id="school-materials"></div>
 
+<!-- COMPETITIVE EXAM MATERIALS -->
 <h2 class="section-heading">চাকরির পরীক্ষার স্টাডি ম্যাটেরিয়ালস</h2>
 
+<!-- 1. MATH -->
 <section class="subject-section subject-math">
 <h3 class="class-heading">1. MATH — গণিত</h3>
 <div class="card-grid">
+
 <div class="card" data-search="math গণিত study materials mcq অঙ্ক">
-<div class="cover"><div class="cover-placeholder">MATH<br>গণিতের বই</div></div>
-<h4>Math Study Materials</h4><p>গণিতের MCQ ও অঙ্ক</p>
-<div class="card-links"><a class="open-link" href="contact.html">PDF খুলুন</a><a class="video-link" href="videos/math.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">MATH<br>গণিতের বই</div></div>
+  <h4>Math Study Materials</h4>
+  <p>গণিতের MCQ ও অঙ্ক</p>
+  <div class="card-links">
+    <a class="open-link" href="contact.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/math.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="arithmetic পাটিগণিত লাভ ক্ষতি শতকরা সুদ">
-<div class="cover"><div class="cover-placeholder">ARITHMETIC<br>পাটিগণিত</div></div>
-<h4>Arithmetic</h4><p>লাভ-ক্ষতি, শতকরা, সুদ</p>
-<div class="card-links"><a class="open-link" href="contact.html">PDF খুলুন</a><a class="video-link" href="videos/arithmetic.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">ARITHMETIC<br>পাটিগণিত</div></div>
+  <h4>Arithmetic</h4>
+  <p>লাভ-ক্ষতি, শতকরা, সুদ</p>
+  <div class="card-links">
+    <a class="open-link" href="contact.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/arithmetic.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="lcm hcf লসাগু গসাগু">
-<div class="cover"><div class="cover-placeholder">LCM &amp; HCF</div></div>
-<h4>LCM &amp; HCF</h4><p>MCQ অনুশীলন</p>
-<div class="card-links"><a class="open-link" href="contact.html">PDF খুলুন</a><a class="video-link" href="videos/lcm-hcf.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">LCM &amp; HCF</div></div>
+  <h4>LCM &amp; HCF</h4>
+  <p>MCQ অনুশীলন</p>
+  <div class="card-links">
+    <a class="open-link" href="contact.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/lcm-hcf.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="time and work সময় ও কাজ">
-<div class="cover"><div class="cover-placeholder">TIME &amp; WORK</div></div>
-<h4>Time and Work</h4><p>গুরুত্বপূর্ণ অঙ্ক</p>
-<div class="card-links"><a class="open-link" href="contact.html">PDF খুলুন</a><a class="video-link" href="videos/time-work.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">TIME &amp; WORK</div></div>
+  <h4>Time and Work</h4>
+  <p>গুরুত্বপূর্ণ অঙ্ক</p>
+  <div class="card-links">
+    <a class="open-link" href="contact.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/time-work.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="math practice set গণিত অনুশীলন">
-<div class="cover"><div class="cover-placeholder">PRACTICE SET</div></div>
-<h4>Math Practice Set</h4><p>পরীক্ষার প্রস্তুতি</p>
-<div class="card-links"><a class="open-link" href="contact.html">PDF খুলুন</a><a class="video-link" href="videos/math-practice.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">PRACTICE SET</div></div>
+  <h4>Math Practice Set</h4>
+  <p>পরীক্ষার প্রস্তুতি</p>
+  <div class="card-links">
+    <a class="open-link" href="contact.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/math-practice.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 </div>
 </section>
 
+<!-- 2. GK -->
 <section class="subject-section subject-gk">
 <h3 class="class-heading">2. GK — সাধারণ জ্ঞান</h3>
 <div class="card-grid">
+
 <div class="card" data-search="general knowledge gk সাধারণ জ্ঞান">
-<div class="cover"><div class="cover-placeholder">GENERAL<br>KNOWLEDGE</div></div>
-<h4>General Knowledge</h4><p>সাধারণ জ্ঞান</p>
-<div class="card-links"><a class="open-link" href="mission.html">PDF খুলুন</a><a class="video-link" href="videos/gk.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">GENERAL<br>KNOWLEDGE</div></div>
+  <h4>General Knowledge</h4>
+  <p>সাধারণ জ্ঞান</p>
+  <div class="card-links">
+    <a class="open-link" href="mission.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/gk.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="indian history ভারতের ইতিহাস">
-<div class="cover"><div class="cover-placeholder">INDIAN<br>HISTORY</div></div>
-<h4>Indian History</h4><p>ভারতের ইতিহাস</p>
-<div class="card-links"><a class="open-link" href="mission.html">PDF খুলুন</a><a class="video-link" href="videos/history.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">INDIAN<br>HISTORY</div></div>
+  <h4>Indian History</h4>
+  <p>ভারতের ইতিহাস</p>
+  <div class="card-links">
+    <a class="open-link" href="mission.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/history.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="geography ভূগোল">
-<div class="cover"><div class="cover-placeholder">GEOGRAPHY</div></div>
-<h4>Geography</h4><p>ভূগোল</p>
-<div class="card-links"><a class="open-link" href="mission.html">PDF খুলুন</a><a class="video-link" href="videos/geography.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">GEOGRAPHY</div></div>
+  <h4>Geography</h4>
+  <p>ভূগোল</p>
+  <div class="card-links">
+    <a class="open-link" href="mission.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/geography.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="indian polity constitution ভারতীয় সংবিধান">
-<div class="cover"><div class="cover-placeholder">POLITY</div></div>
-<h4>Indian Polity</h4><p>ভারতীয় সংবিধান</p>
-<div class="card-links"><a class="open-link" href="mission.html">PDF খুলুন</a><a class="video-link" href="videos/polity.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">POLITY</div></div>
+  <h4>Indian Polity</h4>
+  <p>ভারতীয় সংবিধান</p>
+  <div class="card-links">
+    <a class="open-link" href="mission.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/polity.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="general science সাধারণ বিজ্ঞান">
-<div class="cover"><div class="cover-placeholder">SCIENCE</div></div>
-<h4>General Science</h4><p>সাধারণ বিজ্ঞান</p>
-<div class="card-links"><a class="open-link" href="mission.html">PDF খুলুন</a><a class="video-link" href="videos/science.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">SCIENCE</div></div>
+  <h4>General Science</h4>
+  <p>সাধারণ বিজ্ঞান</p>
+  <div class="card-links">
+    <a class="open-link" href="mission.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/science.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 </div>
 </section>
 
+<!-- 3. ENGLISH -->
 <section class="subject-section subject-english">
 <h3 class="class-heading">3. ENGLISH — ইংরেজি</h3>
 <div class="card-grid">
+
 <div class="card" data-search="english grammar ইংরেজি ব্যাকরণ">
-<div class="cover"><div class="cover-placeholder">ENGLISH<br>GRAMMAR</div></div>
-<h4>English Grammar</h4><p>Grammar MCQ</p>
-<div class="card-links"><a class="open-link" href="downloadlink.html">PDF খুলুন</a><a class="video-link" href="videos/english-grammar.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">ENGLISH<br>GRAMMAR</div></div>
+  <h4>English Grammar</h4>
+  <p>Grammar MCQ</p>
+  <div class="card-links">
+    <a class="open-link" href="downloadlink.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/english-grammar.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="tense কাল ইংরেজি">
-<div class="cover"><div class="cover-placeholder">TENSE</div></div>
-<h4>Tense</h4><p>নিয়ম ও অনুশীলন</p>
-<div class="card-links"><a class="open-link" href="downloadlink.html">PDF খুলুন</a><a class="video-link" href="videos/tense.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">TENSE</div></div>
+  <h4>Tense</h4>
+  <p>নিয়ম ও অনুশীলন</p>
+  <div class="card-links">
+    <a class="open-link" href="downloadlink.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/tense.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="voice change active passive">
-<div class="cover"><div class="cover-placeholder">VOICE</div></div>
-<h4>Voice Change</h4><p>Active ও Passive</p>
-<div class="card-links"><a class="open-link" href="downloadlink.html">PDF খুলুন</a><a class="video-link" href="videos/voice.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">VOICE</div></div>
+  <h4>Voice Change</h4>
+  <p>Active ও Passive</p>
+  <div class="card-links">
+    <a class="open-link" href="downloadlink.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/voice.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="narration direct indirect">
-<div class="cover"><div class="cover-placeholder">NARRATION</div></div>
-<h4>Narration</h4><p>Direct ও Indirect</p>
-<div class="card-links"><a class="open-link" href="downloadlink.html">PDF খুলুন</a><a class="video-link" href="videos/narration.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">NARRATION</div></div>
+  <h4>Narration</h4>
+  <p>Direct ও Indirect</p>
+  <div class="card-links">
+    <a class="open-link" href="downloadlink.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/narration.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="vocabulary শব্দভাণ্ডার">
-<div class="cover"><div class="cover-placeholder">VOCABULARY</div></div>
-<h4>Vocabulary</h4><p>শব্দভাণ্ডার</p>
-<div class="card-links"><a class="open-link" href="downloadlink.html">PDF খুলুন</a><a class="video-link" href="videos/vocabulary.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">VOCABULARY</div></div>
+  <h4>Vocabulary</h4>
+  <p>শব্দভাণ্ডার</p>
+  <div class="card-links">
+    <a class="open-link" href="downloadlink.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/vocabulary.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 </div>
 </section>
 
+<!-- 4. CURRENT AFFAIRS -->
 <section class="subject-section subject-current">
 <h3 class="class-heading">4. Current Affairs — সাম্প্রতিক ঘটনা</h3>
 <div class="card-grid">
+
 <div class="card" data-search="current affairs সাম্প্রতিক ঘটনা">
-<div class="cover"><div class="cover-placeholder">CURRENT<br>AFFAIRS</div></div>
-<h4>Current Affairs</h4><p>সাম্প্রতিক ঘটনা</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/current-affairs.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">CURRENT<br>AFFAIRS</div></div>
+  <h4>Current Affairs</h4>
+  <p>সাম্প্রতিক ঘটনা</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/current-affairs.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="important days themes দিবস থিম">
-<div class="cover"><div class="cover-placeholder">IMPORTANT<br>DAYS</div></div>
-<h4>Important Days</h4><p>দিবস ও থিম</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/important-days.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">IMPORTANT<br>DAYS</div></div>
+  <h4>Important Days</h4>
+  <p>দিবস ও থিম</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/important-days.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="awards honours পুরস্কার সম্মান">
-<div class="cover"><div class="cover-placeholder">AWARDS</div></div>
-<h4>Awards and Honours</h4><p>পুরস্কার ও সম্মান</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/awards.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">AWARDS</div></div>
+  <h4>Awards and Honours</h4>
+  <p>পুরস্কার ও সম্মান</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/awards.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="sports খেলাধুলা">
-<div class="cover"><div class="cover-placeholder">SPORTS</div></div>
-<h4>Sports Current Affairs</h4><p>খেলাধুলার খবর</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/sports.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">SPORTS</div></div>
+  <h4>Sports Current Affairs</h4>
+  <p>খেলাধুলার খবর</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/sports.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="monthly mcq মাসভিত্তিক প্রশ্ন">
-<div class="cover"><div class="cover-placeholder">MONTHLY<br>MCQ</div></div>
-<h4>Monthly MCQ</h4><p>মাসভিত্তিক প্রশ্ন</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/monthly-mcq.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">MONTHLY<br>MCQ</div></div>
+  <h4>Monthly MCQ</h4>
+  <p>মাসভিত্তিক প্রশ্ন</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/monthly-mcq.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 </div>
 </section>
 
+<!-- 5. REASONING -->
 <section class="subject-section subject-reasoning">
 <h3 class="class-heading">5. Reasoning — যুক্তি ও মানসিক দক্ষতা</h3>
 <div class="card-grid">
+
 <div class="card" data-search="reasoning basics যুক্তি">
-<div class="cover"><div class="cover-placeholder">REASONING</div></div>
-<h4>Reasoning Basics</h4><p>যুক্তির প্রাথমিক ধারণা</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/reasoning.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">REASONING</div></div>
+  <h4>Reasoning Basics</h4>
+  <p>যুক্তির প্রাথমিক ধারণা</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/reasoning.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="number series সংখ্যার ধারা">
-<div class="cover"><div class="cover-placeholder">NUMBER<br>SERIES</div></div>
-<h4>Number Series</h4><p>সংখ্যার ধারা</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/number-series.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">NUMBER<br>SERIES</div></div>
+  <h4>Number Series</h4>
+  <p>সংখ্যার ধারা</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/number-series.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="analogy সাদৃশ্য">
-<div class="cover"><div class="cover-placeholder">ANALOGY</div></div>
-<h4>Analogy</h4><p>সাদৃশ্য নির্ণয়</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/analogy.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">ANALOGY</div></div>
+  <h4>Analogy</h4>
+  <p>সাদৃশ্য নির্ণয়</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/analogy.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="coding decoding কোড নির্ণয়">
-<div class="cover"><div class="cover-placeholder">CODING<br>DECODING</div></div>
-<h4>Coding-Decoding</h4><p>কোড নির্ণয়</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/coding-decoding.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">CODING<br>DECODING</div></div>
+  <h4>Coding-Decoding</h4>
+  <p>কোড নির্ণয়</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/coding-decoding.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="reasoning mcq অনুশীলনী">
-<div class="cover"><div class="cover-placeholder">REASONING<br>MCQ</div></div>
-<h4>Reasoning MCQ</h4><p>অনুশীলনী</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/reasoning-mcq.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">REASONING<br>MCQ</div></div>
+  <h4>Reasoning MCQ</h4>
+  <p>অনুশীলনী</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/reasoning-mcq.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 </div>
 </section>
 
+<!-- 6. PRACTICE SETS -->
 <section class="subject-section subject-practice">
 <h3 class="class-heading">6. Practice Sets — পরীক্ষার অনুশীলন</h3>
 <div class="card-grid">
+
 <div class="card" data-search="wbssc group c মডেল প্রশ্নপত্র">
-<div class="cover"><div class="cover-placeholder">WBSSC<br>GROUP C</div></div>
-<h4>WBSSC Group C</h4><p>মডেল প্রশ্নপত্র</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/wbssc-group-c.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">WBSSC<br>GROUP C</div></div>
+  <h4>WBSSC Group C</h4>
+  <p>মডেল প্রশ্নপত্র</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/wbssc-group-c.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="ssc psc practice set">
-<div class="cover"><div class="cover-placeholder">SSC / PSC</div></div>
-<h4>SSC / PSC Practice</h4><p>পরীক্ষার অনুশীলন</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/ssc-psc.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">SSC / PSC</div></div>
+  <h4>SSC / PSC Practice</h4>
+  <p>পরীক্ষার অনুশীলন</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/ssc-psc.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="rrb ntpc railway">
-<div class="cover"><div class="cover-placeholder">RRB / NTPC</div></div>
-<h4>RRB / NTPC</h4><p>মডেল প্রশ্ন</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/rrb-ntpc.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">RRB / NTPC</div></div>
+  <h4>RRB / NTPC</h4>
+  <p>মডেল প্রশ্ন</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/rrb-ntpc.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="omr practice test">
-<div class="cover"><div class="cover-placeholder">OMR TEST</div></div>
-<h4>OMR Practice</h4><p>সময় ধরে অনুশীলন</p>
-<div class="card-links"><a class="open-link" href="download.html">PDF খুলুন</a><a class="video-link" href="videos/omr-practice.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">OMR TEST</div></div>
+  <h4>OMR Practice</h4>
+  <p>সময় ধরে অনুশীলন</p>
+  <div class="card-links">
+    <a class="open-link" href="download.html">PDF খুলুন</a>
+    <a class="video-link" href="videos/omr-practice.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 <div class="card" data-search="pdf notes নোট">
-<div class="cover"><div class="cover-placeholder">PDF NOTES</div></div>
-<h4>PDF Notes</h4><p>ডাউনলোডযোগ্য নোট</p>
-<div class="card-links"><a class="open-link" href="files/notes.pdf" target="_blank" rel="noopener">PDF খুলুন</a><a class="video-link" href="videos/notes.mp4" target="_blank">ভিডিও দেখুন</a></div>
+  <div class="cover"><div class="cover-placeholder">PDF NOTES</div></div>
+  <h4>PDF Notes</h4>
+  <p>ডাউনলোডযোগ্য নোট</p>
+  <div class="card-links">
+    <a class="open-link" href="files/notes.pdf" target="_blank" rel="noopener">PDF খুলুন</a>
+    <a class="video-link" href="videos/notes.mp4" target="_blank" rel="noopener">ভিডিও দেখুন</a>
+  </div>
 </div>
+
 </div>
 </section>
 
-<p class="no-results" id="noResults">দুঃখিত, এই নামে কোনো বই পাওয়া যায়নি। অন্য নাম লিখে খুঁজুন।</p>
+<!-- NO RESULTS MESSAGE -->
+<p class="no-results" id="noResults">
+  দুঃখিত, এই নামে কোনো বই পাওয়া যায়নি। অন্য নাম লিখে খুঁজুন।
+</p>
 
 </main>
 
+<!-- FOOTER -->
 <footer>
-<p><strong>RAJANI ACADEMY</strong> | Belda, West Medinipur</p>
-<p>যোগাযোগ: <a href="tel:7384998077">7384998077</a></p>
-<p>© 2026 RAJANI ACADEMY. All Rights Reserved.</p>
+  <p><strong>RAJANI ACADEMY</strong> | Belda, West Medinipur</p>
+  <p>যোগাযোগ: <a href="tel:7384998077">7384998077</a></p>
+  <p>© 2026 RAJANI ACADEMY. All Rights Reserved.</p>
 </footer>
 
 <script>
-/* Class 5–10 school book cards */
+/* CREATE CLASS 5–10 SCHOOL BOOK CARDS */
 const classes = [5, 6, 7, 8, 9, 10];
 const schoolContainer = document.getElementById("school-materials");
 
@@ -387,21 +849,23 @@ classes.forEach(classNo => {
   for (let bookNo = 1; bookNo <= 5; bookNo++) {
     const card = document.createElement("div");
     card.className = "card";
+
     card.dataset.search =
-      "class " + classNo + " শ্রেণি book " + bookNo +
+      "class " + classNo +
+      " শ্রেণি book " + bookNo +
       " math mathematics গণিত english বাংলা gk general knowledge";
 
     const cover = document.createElement("div");
     cover.className = "cover";
 
-    const img = document.createElement("img");
-    img.src = "image/Rajani Academy Class 5 Math Practice Set.png";
-    img.alt = "Class " + classNo + " Book " + bookNo;
-
     const placeholder = document.createElement("div");
     placeholder.className = "cover-placeholder";
     placeholder.textContent = "CLASS " + classNo + " BOOK " + bookNo;
     cover.appendChild(placeholder);
+
+    const img = document.createElement("img");
+    img.src = "image/Rajani Academy Class 5 Math Practice Set.png";
+    img.alt = "Class " + classNo + " Book " + bookNo;
 
     img.onload = () => {
       cover.innerHTML = "";
@@ -438,6 +902,7 @@ classes.forEach(classNo => {
     links.appendChild(pdfLink);
     links.appendChild(videoLink);
     card.appendChild(links);
+
     grid.appendChild(card);
   }
 
@@ -445,7 +910,7 @@ classes.forEach(classNo => {
   schoolContainer.appendChild(section);
 });
 
-/* LIVE SEARCH: book title, class, subject and Bengali keywords */
+/* LIVE SEARCH */
 const searchBox = document.getElementById("bookSearch");
 const searchCount = document.getElementById("searchCount");
 const noResults = document.getElementById("noResults");
@@ -453,26 +918,45 @@ const noResults = document.getElementById("noResults");
 function runSearch() {
   const query = searchBox.value.trim().toLowerCase();
   const cards = document.querySelectorAll(".card");
-  const sections = document.querySelectorAll(".class-section, .subject-section");
+  const sections = document.querySelectorAll(
+    ".class-section, .subject-section"
+  );
+
   let visibleCount = 0;
 
   cards.forEach(card => {
     const title = card.querySelector("h4")?.textContent || "";
     const description = card.querySelector("p")?.textContent || "";
     const extraKeywords = card.dataset.search || "";
-    const searchText = (title + " " + description + " " + extraKeywords).toLowerCase();
+
+    const searchText = (
+      title + " " + description + " " + extraKeywords
+    ).toLowerCase();
+
     const matched = searchText.includes(query);
 
     card.style.display = matched ? "" : "none";
-    if (matched) visibleCount++;
+
+    if (matched) {
+      visibleCount++;
+    }
   });
 
   sections.forEach(section => {
-    const visibleCards = section.querySelectorAll(".card:not([style*='display: none'])");
-    section.style.display = visibleCards.length ? "" : "none";
+    const cardsInSection = section.querySelectorAll(".card");
+    let hasVisibleCard = false;
+
+    cardsInSection.forEach(card => {
+      if (card.style.display !== "none") {
+        hasVisibleCard = true;
+      }
+    });
+
+    section.style.display = hasVisibleCard ? "" : "none";
   });
 
   noResults.style.display = visibleCount === 0 ? "block" : "none";
+
   searchCount.textContent = query
     ? "পাওয়া গেছে: " + visibleCount + "টি বই"
     : "সব বই দেখতে নিচে স্ক্রল করুন।";
@@ -480,10 +964,13 @@ function runSearch() {
 
 searchBox.addEventListener("input", runSearch);
 
-/* Google Analytics: track PDF and video clicks */
+/* GOOGLE ANALYTICS: TRACK PDF AND VIDEO CLICKS */
 document.addEventListener("click", function(event) {
   const link = event.target.closest("a.open-link, a.video-link");
-  if (!link) return;
+
+  if (!link) {
+    return;
+  }
 
   if (typeof window.gtag === "function") {
     const card = link.closest(".card");
