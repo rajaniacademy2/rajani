@@ -5,75 +5,75 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RAJANI ACADEMY | Study Materials</title>
-<meta name="description" content="Rajani Academy school books, study materials, Maths, GK, English and competitive examination practice sets.">
+<meta name="description" content="Rajani Academy Study Materials and Competitive Exam Practice Sets">
 
-<!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVF2CK9X85"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){window.dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-ZVF2CK9X85');
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-ZVF2CK9X85');
 </script>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,"Noto Sans Bengali",sans-serif;background:#eaf3ff;color:#222}
-
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100%;font-family:Arial,"Noto Sans Bengali",sans-serif}
+body{background:#eaf3ff;color:#222}
 header{background:#0808c9;color:white;text-align:center;padding:10px}
 header img{width:60px;max-height:70px;object-fit:contain}
 header h1{font-size:30px;margin:5px}
-header p{font-size:13px;line-height:1.6}
-
+header p{font-size:13px;line-height:1.6;margin:4px}
 nav{background:#ffeb00;position:relative;z-index:10}
-.menu{list-style:none;display:flex;flex-wrap:wrap;justify-content:center}
+.menu{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;margin:0;padding:0}
 .menu li{position:relative}
 .menu a{display:block;padding:11px 9px;text-decoration:none;color:#0808c9;font-size:13px;font-weight:bold}
 .menu a:hover{background:white;color:red}
-.dropdown-content{display:none;position:absolute;top:100%;left:0;min-width:190px;background:white;box-shadow:0 4px 10px #0003;list-style:none}
+.dropdown-content{display:none;position:absolute;top:100%;left:0;min-width:190px;background:white;box-shadow:0 4px 10px #0003;list-style:none;padding:0}
 .dropdown-content a{color:#222;font-weight:normal}
 .dropdown:hover>.dropdown-content,.dropdown:focus-within>.dropdown-content{display:block}
 
-main{padding:12px 10px 20px}
+main{width:100%;max-width:1500px;margin:auto;padding:12px 10px 20px}
 .section-heading{text-align:center;background:#123e86;color:white;padding:12px 5px;margin:8px 0 15px;border-radius:6px;font-size:25px}
 .class-section,.subject-section{margin-bottom:24px}
-.class-heading{text-align:center;background:#087dcc;color:white;padding:9px;margin-bottom:10px;border-radius:5px;font-size:19px}
+.class-heading{text-align:center;background:#087dcc;color:white;padding:9px;margin:0 0 12px;border-radius:5px;font-size:19px}
 
-/* Desktop: প্রতি সারিতে 4টি কার্ড */
+/* মূল গ্রিড: কম্পিউটারে 4টি কার্ড */
 .card-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
   gap:16px;
-  align-items:stretch
+  width:100%;
+  align-items:stretch;
 }
 
-/* Flip card */
 .card{
-  height:390px;
+  width:100%;
   min-width:0;
+  height:370px;
   position:relative;
-  overflow:visible;
-  border:0;
-  background:transparent;
-  box-shadow:none;
   perspective:1100px;
-  cursor:pointer
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  overflow:visible;
 }
-.card .flip-inner{
+.flip-inner{
   position:relative;
   width:100%;
   height:100%;
   transform-style:preserve-3d;
-  transition:transform .7s cubic-bezier(.2,.75,.25,1);
-  border-radius:16px
+  transition:transform .7s ease;
+  border-radius:16px;
 }
 .card.is-flipped .flip-inner{transform:rotateY(180deg)}
 
-.card .flip-front,.card .flip-back{
+.flip-front,.flip-back{
   position:absolute;
   inset:0;
-  height:100%;
   width:100%;
+  height:100%;
+  padding:12px;
+  border:3px solid white;
   border-radius:16px;
   overflow:hidden;
   backface-visibility:hidden;
@@ -82,113 +82,60 @@ main{padding:12px 10px 20px}
   flex-direction:column;
   align-items:center;
   text-align:center;
-  padding:14px 12px 13px;
   box-shadow:0 8px 20px #152b5a55;
-  border:3px solid #fff
 }
-.card .flip-front{
-  background:linear-gradient(135deg,#fff700 0%,#ff8a00 24%,#ff3cac 49%,#784bff 73%,#00e5ff 100%);
-  color:#10265c
+.flip-front{
+  background:linear-gradient(135deg,#fff700,#ff8a00,#ff3cac,#784bff,#00e5ff);
+  color:#10265c;
 }
-.card .flip-back{
+.flip-back{
   transform:rotateY(180deg);
-  background:linear-gradient(135deg,#ff1744 0%,#ff9100 25%,#ff00c8 52%,#651fff 77%,#00c8ff 100%);
+  background:linear-gradient(135deg,#ff1744,#ff9100,#ff00c8,#651fff,#00c8ff);
   color:white;
-  justify-content:center
+  justify-content:center;
 }
-
 .cover{
-  height:180px;
-  background:#f4f7fc;
+  width:100%;
+  height:165px;
+  flex:0 0 165px;
+  background:linear-gradient(135deg,#fff,#d5faff);
+  border-radius:10px;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:8px
+  padding:7px;
+  overflow:hidden;
 }
 .cover img{width:100%;height:100%;object-fit:contain}
-.cover-placeholder{
-  font-size:15px;
-  font-weight:bold;
-  color:#123e86;
-  text-align:center;
-  line-height:1.7
-}
+.cover-placeholder{font-size:16px;font-weight:bold;color:#092b85;text-align:center;line-height:1.5}
+.flip-front h4{font-size:14px;color:#082b7a;line-height:1.35;margin:7px 0 3px}
+.flip-front p{font-size:12px;color:#15264a;line-height:1.4;margin:2px 0 5px}
+.flip-back h4{font-size:18px;color:white;line-height:1.4;margin:8px 0;text-shadow:0 2px 4px #630024}
+.flip-back p{font-size:13px;color:white;line-height:1.6;margin:5px 0 15px}
 
-.card .flip-front .cover{
-  height:185px;
-  width:100%;
-  flex:0 0 185px;
-  border-radius:10px;
-  background:linear-gradient(135deg,#ffffffd9,#d5faffd9);
-  padding:8px;
-  overflow:hidden
-}
-.card .flip-front .cover img{width:100%;height:100%;object-fit:contain}
-.card .flip-front .cover-placeholder{
-  font-size:17px;
-  color:#092b85;
-  line-height:1.5;
-  text-shadow:0 1px 0 #fff
-}
-.card .flip-front h4{
-  color:#082b7a;
-  font-size:15px;
-  line-height:1.35;
-  padding:9px 3px 4px
-}
-.card .flip-front p{
-  color:#15264a;
-  font-size:12px;
-  line-height:1.45;
-  padding:3px 4px 8px
-}
-.card .flip-back h4{
-  color:white;
-  font-size:18px;
-  line-height:1.4;
-  padding:10px 4px;
-  text-shadow:0 2px 4px #630024
-}
-.card .flip-back p{
-  color:white;
-  font-size:13px;
-  line-height:1.6;
-  padding:5px 8px 15px
-}
-
-.card:hover .flip-front,.card:hover .flip-back{
-  box-shadow:0 0 0 3px #fff,0 0 18px #ff00d4,0 0 30px #00d9ff;
-  filter:saturate(1.12)
-}
-
-.card .flip-front a.open-link,.card .flip-back a.open-link{
-  display:block!important;
-  position:relative;
-  margin:auto 0 0!important;
-  padding:11px 12px!important;
+.open-link{
+  display:block;
   width:100%;
   max-width:190px;
-  background:#071a75!important;
-  color:#fff!important;
+  margin:auto 0 0;
+  padding:10px 7px;
+  background:#071a75;
+  color:white!important;
   border:2px solid white;
-  border-radius:30px!important;
+  border-radius:30px;
   text-decoration:none;
+  font-size:12px;
   font-weight:bold;
-  font-size:13px!important;
+  text-align:center;
   box-shadow:0 4px 0 #00104c;
-  z-index:2
+  position:relative;
+  z-index:3;
 }
-.card .flip-back a.open-link{
-  background:#fff!important;
-  color:#b00036!important;
-  box-shadow:0 4px 0 #650020
-}
-.card .flip-front a.open-link:hover,.card .flip-back a.open-link:hover{
-  filter:brightness(1.1);
-  transform:translateY(-1px)
-}
-.card:focus-visible{outline:4px solid #111;outline-offset:4px;border-radius:16px}
-.card .flip-hint{font-size:11px;font-weight:bold;opacity:.8;margin-top:7px}
+.flip-back .open-link{background:white;color:#b00036!important;box-shadow:0 4px 0 #650020}
+.open-link:hover{filter:brightness(1.12)}
+.flip-hint{font-size:10px;font-weight:bold;margin-top:7px;opacity:.9}
+.card:hover .flip-front,.card:hover .flip-back{box-shadow:0 0 0 3px white,0 0 18px #ff00d4,0 0 28px #00d9ff}
+.card:focus-visible{outline:4px solid #111;outline-offset:3px}
 
 .subject-math .class-heading{background:#087b43}
 .subject-gk .class-heading{background:#a85b00}
@@ -197,37 +144,50 @@ main{padding:12px 10px 20px}
 .subject-reasoning .class-heading{background:#166d78}
 .subject-practice .class-heading{background:#444}
 
-footer{background:#111;color:white;text-align:center;padding:7px 5px;font-size:12px;line-height:1.6}
+footer{background:#111;color:white;text-align:center;padding:10px 5px;font-size:12px;line-height:1.7}
 footer a{color:#ffeb00;text-decoration:none}
 
-/* Tablet এবং মোবাইল: প্রতি সারিতে 2টি কার্ড */
-@media(max-width:900px){
-  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  .card{height:355px}
-  .card .flip-front .cover{height:155px;flex-basis:155px}
+/* ট্যাবলেট */
+@media (min-width:601px) and (max-width:900px){
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px}
+  .card{height:350px}
 }
 
-@media(max-width:600px){
+/* মোবাইল: জোর করে প্রতি সারিতে ঠিক 2টি কার্ড */
+@media screen and (max-width:600px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
   header{padding:8px}
-  header h1{font-size:24px}
-  header p{font-size:12px}
+  header h1{font-size:23px}
+  header p{font-size:11px}
   .menu a{padding:9px 6px;font-size:11px}
-  .dropdown-content{min-width:165px}
-  main{padding:10px 7px}
-  .section-heading{font-size:20px}
+  .dropdown-content{min-width:155px}
+  main{width:100%;max-width:100%;padding:10px 7px}
+  .section-heading{font-size:19px}
+  .class-heading{font-size:16px}
 
-  /* মোবাইলে ঠিক 2টি কার্ড */
-  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-  .card{height:340px}
-  .card .flip-front,.card .flip-back{padding:9px 8px 10px;border-width:2px}
-  .card .flip-front .cover{height:140px;flex-basis:140px;padding:5px}
-  .card .flip-front .cover-placeholder{font-size:14px}
-  .card .flip-front h4{font-size:13px;padding:7px 2px 3px}
-  .card .flip-front p{font-size:11px;padding:2px 2px 6px}
-  .card .flip-back h4{font-size:15px}
-  .card .flip-back p{font-size:11px;padding:4px 3px 10px}
-  .card .flip-front a.open-link,.card .flip-back a.open-link{font-size:11px!important;padding:9px 5px!important;max-width:160px}
-  .card .flip-hint{font-size:10px}
+  html body main .card-grid{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    grid-auto-flow:row !important;
+    gap:10px !important;
+    width:100% !important;
+  }
+  html body main .card-grid>.card{
+    display:block;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    height:325px;
+  }
+  .flip-front,.flip-back{padding:8px;border-width:2px}
+  .cover{height:125px;flex-basis:125px;padding:4px}
+  .cover-placeholder{font-size:13px}
+  .flip-front h4{font-size:12px;margin:6px 0 2px}
+  .flip-front p{font-size:10px;margin:2px 0 4px}
+  .flip-back h4{font-size:14px}
+  .flip-back p{font-size:11px;margin-bottom:12px}
+  .open-link{font-size:10px;padding:9px 3px;max-width:100%}
+  .flip-hint{font-size:9px}
 }
 </style>
 </head>
@@ -242,57 +202,46 @@ footer a{color:#ffeb00;text-decoration:none}
 
 <nav>
 <ul class="menu">
-<li class="dropdown">
-<a href="#">HOME ▼</a>
-<ul class="dropdown-content">
-<li><a href="GK%20TRIKE%20BOOK.docx">GK TRIKE BOOK</a></li>
-<li><a href="shyam.html">Shyam</a></li>
-<li><a href="about.html">About Us</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">ENQUIRY FORM ▼</a>
-<ul class="dropdown-content">
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLScSE02EtmUz_ucoO_gb0uOMsr3bOPCK6Kc4MGj6NJ3dpLgLtQ/viewform">Enquiry Details</a></li>
-<li><a href="apply.html">Student Information</a></li>
-<li><a href="apply.html">Course Enquiry</a></li>
-<li><a href="apply.html">Contact Information</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">ADMISSION FORM ▼</a>
-<ul class="dropdown-content">
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfUwa3CleEmQilfRXVH8YK6mjkkPFxR-Tm6NkFNprdtCSK-Vw/viewform?usp=dialog">Admission Details</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">DEMO STUDY MATERIALS ▼</a>
-<ul class="dropdown-content">
-<li><a href="mission.html">GK</a></li>
-<li><a href="downloadlink.html">ENGLISH</a></li>
-<li><a href="contact.html">MATH</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">DOWNLOAD ▼</a>
-<ul class="dropdown-content">
-<li><a href="download.html">Download Materials</a></li>
-<li><a href="files/notes.pdf" target="_blank" rel="noopener">PDF Notes</a></li>
-<li><a href="files/result.pdf" target="_blank" rel="noopener">Result</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">GALLERY ▼</a>
-<ul class="dropdown-content">
-<li><a href="photo.html">Photo Gallery</a></li>
-<li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
-</ul>
-</li>
+  <li class="dropdown"><a href="#">HOME ▼</a>
+    <ul class="dropdown-content">
+      <li><a href="GK%20TRIKE%20BOOK.docx">GK TRIKE BOOK</a></li>
+      <li><a href="shyam.html">Shyam</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </li>
+  <li class="dropdown"><a href="#">ENQUIRY FORM ▼</a>
+    <ul class="dropdown-content">
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScSE02EtmUz_ucoO_gb0uOMsr3bOPCK6Kc4MGj6NJ3dpLgLtQ/viewform">Enquiry Details</a></li>
+      <li><a href="apply.html">Student Information</a></li>
+      <li><a href="apply.html">Course Enquiry</a></li>
+      <li><a href="apply.html">Contact Information</a></li>
+    </ul>
+  </li>
+  <li class="dropdown"><a href="#">ADMISSION FORM ▼</a>
+    <ul class="dropdown-content">
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfUwa3CleEmQilfRXVH8YK6mjkkPFxR-Tm6NkFNprdtCSK-Vw/viewform?usp=dialog">Admission Details</a></li>
+    </ul>
+  </li>
+  <li class="dropdown"><a href="#">DEMO STUDY MATERIALS ▼</a>
+    <ul class="dropdown-content">
+      <li><a href="mission.html">GK</a></li>
+      <li><a href="downloadlink.html">ENGLISH</a></li>
+      <li><a href="contact.html">MATH</a></li>
+    </ul>
+  </li>
+  <li class="dropdown"><a href="#">DOWNLOAD ▼</a>
+    <ul class="dropdown-content">
+      <li><a href="download.html">Download Materials</a></li>
+      <li><a href="files/notes.pdf" target="_blank" rel="noopener">PDF Notes</a></li>
+      <li><a href="files/result.pdf" target="_blank" rel="noopener">Result</a></li>
+    </ul>
+  </li>
+  <li class="dropdown"><a href="#">GALLERY ▼</a>
+    <ul class="dropdown-content">
+      <li><a href="photo.html">Photo Gallery</a></li>
+      <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+  </li>
 </ul>
 </nav>
 
@@ -305,60 +254,60 @@ footer a{color:#ffeb00;text-decoration:none}
 <section class="subject-section subject-math">
 <h3 class="class-heading">1. MATH — গণিত</h3>
 <div class="card-grid">
-<div class="card"><div class="cover"><div class="cover-placeholder">MATH<br>গণিতের বই</div></div><h4>Math Study Materials</h4><p>গণিতের MCQ ও অঙ্ক</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">ARITHMETIC<br>পাটিগণিত</div></div><h4>Arithmetic</h4><p>লাভ-ক্ষতি, শতকরা, সুদ</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">LCM & HCF</div></div><h4>LCM & HCF</h4><p>MCQ অনুশীলন</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">TIME & WORK</div></div><h4>Time and Work</h4><p>গুরুত্বপূর্ণ অঙ্ক</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">MATH<br>গণিতের বই</div></div><h4>Math Study Materials</h4><p>গণিতের MCQ ও অঙ্ক</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">ARITHMETIC</div></div><h4>Arithmetic</h4><p>লাভ-ক্ষতি, শতকরা, সুদ</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">LCM & HCF</div></div><h4>LCM & HCF</h4><p>MCQ অনুশীলন</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">TIME & WORK</div></div><h4>Time and Work</h4><p>গুরুত্বপূর্ণ অঙ্ক</p><a class="open-link" href="contact.html">বই খুলুন</a></div>
 </div>
 </section>
 
 <section class="subject-section subject-gk">
 <h3 class="class-heading">2. GK — সাধারণ জ্ঞান</h3>
 <div class="card-grid">
-<div class="card"><div class="cover"><div class="cover-placeholder">GENERAL<br>KNOWLEDGE</div></div><h4>General Knowledge</h4><p>সাধারণ জ্ঞান</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">INDIAN<br>HISTORY</div></div><h4>Indian History</h4><p>ভারতের ইতিহাস</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">GEOGRAPHY</div></div><h4>Geography</h4><p>ভূগোল</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">POLITY</div></div><h4>Indian Polity</h4><p>ভারতীয় সংবিধান</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">GENERAL KNOWLEDGE</div></div><h4>General Knowledge</h4><p>সাধারণ জ্ঞান</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">INDIAN HISTORY</div></div><h4>Indian History</h4><p>ভারতের ইতিহাস</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">GEOGRAPHY</div></div><h4>Geography</h4><p>ভূগোল</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">POLITY</div></div><h4>Indian Polity</h4><p>ভারতীয় সংবিধান</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
 </div>
 </section>
 
 <section class="subject-section subject-english">
 <h3 class="class-heading">3. ENGLISH — ইংরেজি</h3>
 <div class="card-grid">
-<div class="card"><div class="cover"><div class="cover-placeholder">ENGLISH<br>GRAMMAR</div></div><h4>English Grammar</h4><p>Grammar MCQ</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">TENSE</div></div><h4>Tense</h4><p>নিয়ম ও অনুশীলন</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">VOICE</div></div><h4>Voice Change</h4><p>Active ও Passive</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">NARRATION</div></div><h4>Narration</h4><p>Direct ও Indirect</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">ENGLISH GRAMMAR</div></div><h4>English Grammar</h4><p>Grammar MCQ</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">TENSE</div></div><h4>Tense</h4><p>নিয়ম ও অনুশীলন</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">VOICE</div></div><h4>Voice Change</h4><p>Active ও Passive</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">NARRATION</div></div><h4>Narration</h4><p>Direct ও Indirect</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
 </div>
 </section>
 
 <section class="subject-section subject-current">
 <h3 class="class-heading">4. Current Affairs — সাম্প্রতিক ঘটনা</h3>
 <div class="card-grid">
-<div class="card"><div class="cover"><div class="cover-placeholder">CURRENT<br>AFFAIRS</div></div><h4>Current Affairs</h4><p>সাম্প্রতিক ঘটনা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">IMPORTANT<br>DAYS</div></div><h4>Important Days</h4><p>দিবস ও থিম</p><a class="open-link" href="download.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">AWARDS</div></div><h4>Awards and Honours</h4><p>পুরস্কার ও সম্মান</p><a class="open-link" href="download.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">SPORTS</div></div><h4>Sports Current Affairs</h4><p>খেলাধুলার খবর</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">CURRENT AFFAIRS</div></div><h4>Current Affairs</h4><p>সাম্প্রতিক ঘটনা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">IMPORTANT DAYS</div></div><h4>Important Days</h4><p>দিবস ও থিম</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">AWARDS</div></div><h4>Awards and Honours</h4><p>পুরস্কার ও সম্মান</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">SPORTS</div></div><h4>Sports Current Affairs</h4><p>খেলাধুলার খবর</p><a class="open-link" href="download.html">বই খুলুন</a></div>
 </div>
 </section>
 
 <section class="subject-section subject-reasoning">
 <h3 class="class-heading">5. Reasoning — যুক্তি ও মানসিক দক্ষতা</h3>
 <div class="card-grid">
-<div class="card"><div class="cover"><div class="cover-placeholder">REASONING</div></div><h4>Reasoning Basics</h4><p>যুক্তির প্রাথমিক ধারণা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">NUMBER<br>SERIES</div></div><h4>Number Series</h4><p>সংখ্যার ধারা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">ANALOGY</div></div><h4>Analogy</h4><p>সাদৃশ্য নির্ণয়</p><a class="open-link" href="download.html">বই খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">CODING<br>DECODING</div></div><h4>Coding-Decoding</h4><p>কোড নির্ণয়</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">REASONING</div></div><h4>Reasoning Basics</h4><p>যুক্তির প্রাথমিক ধারণা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">NUMBER SERIES</div></div><h4>Number Series</h4><p>সংখ্যার ধারা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">ANALOGY</div></div><h4>Analogy</h4><p>সাদৃশ্য নির্ণয়</p><a class="open-link" href="download.html">বই খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">CODING DECODING</div></div><h4>Coding-Decoding</h4><p>কোড নির্ণয়</p><a class="open-link" href="download.html">বই খুলুন</a></div>
 </div>
 </section>
 
 <section class="subject-section subject-practice">
 <h3 class="class-heading">6. Practice Sets — পরীক্ষার অনুশীলন</h3>
 <div class="card-grid">
-<div class="card"><div class="cover"><div class="cover-placeholder">WBSSC<br>GROUP C</div></div><h4>WBSSC Group C</h4><p>মডেল প্রশ্নপত্র</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">SSC / PSC</div></div><h4>SSC / PSC Practice</h4><p>পরীক্ষার অনুশীলন</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">RRB / NTPC</div></div><h4>RRB / NTPC</h4><p>মডেল প্রশ্ন</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
-<div class="card"><div class="cover"><div class="cover-placeholder">OMR TEST</div></div><h4>OMR Practice</h4><p>সময় ধরে অনুশীলন</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">WBSSC GROUP C</div></div><h4>WBSSC Group C</h4><p>মডেল প্রশ্নপত্র</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">SSC / PSC</div></div><h4>SSC / PSC Practice</h4><p>পরীক্ষার অনুশীলন</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">RRB / NTPC</div></div><h4>RRB / NTPC</h4><p>মডেল প্রশ্ন</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
+  <div class="card"><div class="cover"><div class="cover-placeholder">OMR TEST</div></div><h4>OMR Practice</h4><p>সময় ধরে অনুশীলন</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
 </div>
 </section>
 </main>
@@ -370,59 +319,58 @@ footer a{color:#ffeb00;text-decoration:none}
 </footer>
 
 <script>
-/* Class 5–10: প্রতি শ্রেণিতে মোট 4টি বই */
-const classes = [5,6,7,8,9,10];
-const schoolContainer = document.getElementById("school-materials");
+/* Class 5 থেকে Class 10: প্রতি শ্রেণিতে 4টি বই */
+const schoolContainer=document.getElementById('school-materials');
 
-classes.forEach(classNo => {
-  const section = document.createElement("section");
-  section.className = "class-section";
+[5,6,7,8,9,10].forEach(classNo=>{
+  const section=document.createElement('section');
+  section.className='class-section';
 
-  const heading = document.createElement("h3");
-  heading.className = "class-heading";
-  heading.textContent = "Class " + classNo + " — " + classNo + "ম শ্রেণির বই";
+  const heading=document.createElement('h3');
+  heading.className='class-heading';
+  heading.textContent='Class '+classNo+' — '+classNo+'ম শ্রেণির বই';
   section.appendChild(heading);
 
-  const grid = document.createElement("div");
-  grid.className = "card-grid";
+  const grid=document.createElement('div');
+  grid.className='card-grid';
 
-  for (let bookNo = 1; bookNo <= 4; bookNo++) {
-    const card = document.createElement("div");
-    card.className = "card";
+  for(let bookNo=1;bookNo<=4;bookNo++){
+    const card=document.createElement('div');
+    card.className='card';
 
-    const cover = document.createElement("div");
-    cover.className = "cover";
+    const cover=document.createElement('div');
+    cover.className='cover';
 
-    const img = document.createElement("img");
-    img.src = "image/books/class" + classNo + "/book" + bookNo + ".jpg";
-    img.alt = "Class " + classNo + " Book " + bookNo;
+    const img=document.createElement('img');
+    img.src='image/books/class'+classNo+'/book'+bookNo+'.jpg';
+    img.alt='Class '+classNo+' Book '+bookNo;
 
-    const placeholder = document.createElement("div");
-    placeholder.className = "cover-placeholder";
-    placeholder.textContent = "CLASS " + classNo + " BOOK " + bookNo;
+    const placeholder=document.createElement('div');
+    placeholder.className='cover-placeholder';
+    placeholder.textContent='CLASS '+classNo+' BOOK '+bookNo;
     cover.appendChild(placeholder);
 
-    img.onload = () => {
-      cover.innerHTML = "";
+    img.onload=()=>{
+      cover.innerHTML='';
       cover.appendChild(img);
     };
 
     card.appendChild(cover);
 
-    const title = document.createElement("h4");
-    title.textContent = "Class " + classNo + " Book " + bookNo;
+    const title=document.createElement('h4');
+    title.textContent='Class '+classNo+' Book '+bookNo;
     card.appendChild(title);
 
-    const desc = document.createElement("p");
-    desc.textContent = "স্টাডি ম্যাটেরিয়ালস ও অনুশীলন";
+    const desc=document.createElement('p');
+    desc.textContent='স্টাডি ম্যাটেরিয়ালস ও অনুশীলন';
     card.appendChild(desc);
 
-    const link = document.createElement("a");
-    link.className = "open-link";
-    link.href = "books/class" + classNo + "/book" + bookNo + ".pdf";
-    link.textContent = "PDF খুলুন";
-    link.target = "_blank";
-    link.rel = "noopener";
+    const link=document.createElement('a');
+    link.className='open-link';
+    link.href='books/class'+classNo+'/book'+bookNo+'.pdf';
+    link.textContent='PDF খুলুন';
+    link.target='_blank';
+    link.rel='noopener';
     card.appendChild(link);
 
     grid.appendChild(card);
@@ -433,76 +381,71 @@ classes.forEach(classNo => {
 });
 
 /* সব কার্ডে Flip Effect */
-function makeFlipCards(){
-  document.querySelectorAll('.card').forEach((card,index)=>{
-    if(card.querySelector('.flip-inner')) return;
+document.querySelectorAll('.card').forEach((card,index)=>{
+  const cover=card.querySelector('.cover');
+  const title=card.querySelector('h4');
+  const desc=card.querySelector('p');
+  const oldLink=card.querySelector('a.open-link');
 
-    const cover=card.querySelector('.cover');
-    const title=card.querySelector('h4');
-    const desc=card.querySelector('p');
-    const oldLink=card.querySelector('a.open-link');
+  const titleText=title?title.textContent.trim():'Study Materials';
+  const descText=desc?desc.textContent.trim():'স্টাডি ম্যাটেরিয়ালস';
+  const href=oldLink?oldLink.getAttribute('href'):'download.html';
+  const oldText=oldLink?oldLink.textContent.trim():'PDF খুলুন';
+  const coverHTML=cover?cover.outerHTML:'<div class="cover"><div class="cover-placeholder">RAJANI ACADEMY</div></div>';
 
-    const titleText=title ? title.textContent.trim() : 'Study Materials';
-    const descText=desc ? desc.textContent.trim() : 'স্টাডি ম্যাটেরিয়ালস ও অনুশীলন';
-    const href=oldLink ? oldLink.getAttribute('href') : 'download.html';
-    const linkText=oldLink ? oldLink.textContent.trim() : 'PDF খুলুন';
-    const coverHTML=cover ? cover.outerHTML : '<div class="cover"><div class="cover-placeholder">RAJANI ACADEMY</div></div>';
+  const buttonText=oldText.includes('সেট')?'সেট খুলুন':oldText.includes('বই')?'বই খুলুন':'PDF খুলুন';
+  const colors=['#ff00a8','#00d9ff','#ff6d00','#7c4dff','#00c853','#ff1744','#ffea00','#00b0ff'];
+  const color=colors[index%colors.length];
 
-    const colors=['#ff00a8','#00d9ff','#ff6d00','#7c4dff','#00c853','#ff1744','#ffea00','#00b0ff'];
-    const color=colors[index%colors.length];
-    const buttonText=linkText==='বই খুলুন'?'বই খুলুন':linkText==='সেট খুলুন'?'সেট খুলুন':'PDF খুলুন';
+  card.innerHTML=`
+    <div class="flip-inner">
+      <div class="flip-front">
+        ${coverHTML}
+        <h4>${titleText}</h4>
+        <p>${descText}</p>
+        <a class="open-link" href="${href}" target="_blank" rel="noopener">📥 ${buttonText}</a>
+        <span class="flip-hint">🔄 পিছনের দিক দেখতে কার্ডে চাপ দিন</span>
+      </div>
+      <div class="flip-back" style="background:linear-gradient(135deg,${color},#ff9100,#ff00c8,#651fff,#00c8ff)">
+        <h4>${titleText}</h4>
+        <p>${descText}<br>RAJANI ACADEMY<br>পড়ুন, অনুশীলন করুন, সফল হোন।</p>
+        <a class="open-link" href="${href}" target="_blank" rel="noopener">📥 ${buttonText}</a>
+        <span class="flip-hint">🔄 সামনের দিকে ফিরতে কার্ডে চাপ দিন</span>
+      </div>
+    </div>`;
 
-    card.innerHTML=`
-      <div class="flip-inner">
-        <div class="flip-front">
-          ${coverHTML}
-          <h4>${titleText}</h4>
-          <p>${descText}</p>
-          <a class="open-link" href="${href}" target="_blank" rel="noopener">📥 ${buttonText}</a>
-          <span class="flip-hint">🔄 পিছনের দিক দেখতে কার্ডে চাপ দিন</span>
-        </div>
-        <div class="flip-back" style="background:linear-gradient(135deg,${color} 0%,#ff9100 28%,#ff00c8 55%,#651fff 78%,#00c8ff 100%)">
-          <h4>${titleText}</h4>
-          <p>${descText}<br>RAJANI ACADEMY<br>পড়ুন, অনুশীলন করুন, সফল হোন।</p>
-          <a class="open-link" href="${href}" target="_blank" rel="noopener">📥 ${buttonText}</a>
-          <span class="flip-hint">🔄 সামনের দিকে ফিরতে কার্ডে চাপ দিন</span>
-        </div>
-      </div>`;
+  card.setAttribute('tabindex','0');
+  card.setAttribute('role','button');
+  card.setAttribute('aria-label',titleText+' — কার্ড উল্টাতে ক্লিক করুন');
+});
 
-    card.setAttribute('tabindex','0');
-    card.setAttribute('role','button');
-    card.setAttribute('aria-label',titleText+' — কার্ড উল্টাতে ক্লিক করুন');
-  });
-}
-makeFlipCards();
-
-/* কার্ডে ক্লিক করলে Flip হবে; PDF বাটনে ক্লিক করলে PDF খুলবে */
-document.addEventListener('click',function(event){
+/* কার্ডে চাপ দিলে Flip হবে; PDF লিংকে চাপ দিলে PDF খুলবে */
+document.addEventListener('click',event=>{
   const card=event.target.closest('.card');
-  if(!card || event.target.closest('a')) return;
+  if(!card||event.target.closest('a'))return;
   card.classList.toggle('is-flipped');
 });
 
-document.addEventListener('keydown',function(event){
-  if((event.key==='Enter'||event.key===' ') && event.target.classList.contains('card')){
+document.addEventListener('keydown',event=>{
+  if((event.key==='Enter'||event.key===' ')&&event.target.classList.contains('card')){
     event.preventDefault();
     event.target.classList.toggle('is-flipped');
   }
 });
 
-/* Google Analytics: study material clicks */
-document.addEventListener('click',function(event){
+/* Google Analytics: PDF ও স্টাডি ম্যাটেরিয়াল ক্লিক */
+document.addEventListener('click',event=>{
   const link=event.target.closest('a.open-link');
-  if(!link) return;
+  if(!link)return;
 
   if(typeof window.gtag==='function'){
     const card=link.closest('.card');
-    const title=card && card.querySelector('h4');
+    const title=card&&card.querySelector('h4');
 
     window.gtag('event','study_material_click',{
-      link_text:(link.textContent||'').trim(),
+      link_text:link.textContent.trim(),
       link_url:link.href,
-      material_title:title ? title.textContent.trim() : '',
+      material_title:title?title.textContent.trim():'',
       page_location:window.location.href
     });
   }
