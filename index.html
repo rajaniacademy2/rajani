@@ -85,7 +85,7 @@ footer a{color:#ffeb00;text-decoration:none}
 .card .flip-front p{color:#15264a;font-size:12px;line-height:1.45;padding:3px 4px 8px}
 .card .flip-back h4{color:white;font-size:18px;line-height:1.4;padding:10px 4px;text-shadow:0 2px 4px #630024}
 .card .flip-back p{color:white;font-size:13px;line-height:1.6;padding:5px 8px 15px}
-.card:hover .flip-front,.card:hover .flip-back{box-shadow:0 0 0 3px #fff,0 0 18px #ff00d4,0 0 30px #00d9ff;filter:saturate(1.12)}
+.card:hover .flip-front,.card:hover .flip-back{box-shadow:0 0 0 3px #fff,0 0 14px var(--card-glow,#00d9ff),0 0 28px var(--card-glow,#7c4dff),0 0 38px #ffffff55;filter:saturate(1.12)}
 .card .flip-front a.open-link,.card .flip-back a.open-link{display:block!important;position:relative;margin:auto 0 0!important;padding:11px 12px!important;width:100%;max-width:190px;background:#071a75!important;color:#fff!important;border:2px solid white;border-radius:30px!important;text-decoration:none;font-weight:bold;font-size:13px!important;box-shadow:0 4px 0 #00104c;z-index:2}
 .card .flip-back a.open-link{background:#fff!important;color:#b00036!important;box-shadow:0 4px 0 #650020}
 .card .flip-front a.open-link:hover,.card .flip-back a.open-link:hover{filter:brightness(1.1);transform:translateY(-1px)}
@@ -405,12 +405,39 @@ function makeFlipCards(){
     }
 
     const coverHTML=cover ? cover.outerHTML : '<div class="cover"><div class="cover-placeholder">RAJANI ACADEMY</div></div>';
-    const colors=['#ff00a8','#00d9ff','#ff6d00','#7c4dff','#00c853','#ff1744','#ffea00','#00b0ff'];
-    const color=colors[index%colors.length];
+    /* অধ্যায় অনুযায়ী আলাদা Mixed Gradient Color Theme */
+    const themes = [
+      { cls:'theme-blue', front:'linear-gradient(135deg,#E3F2FD 0%,#90CAF9 48%,#00D9FF 100%)', back:'linear-gradient(135deg,#1565C0,#00D9FF,#304FFE)', glow:'#00D9FF' },
+      { cls:'theme-green', front:'linear-gradient(135deg,#E8F5E9 0%,#81C784 48%,#00E676 100%)', back:'linear-gradient(135deg,#2E7D32,#00C853,#69F0AE)', glow:'#00E676' },
+      { cls:'theme-orange', front:'linear-gradient(135deg,#FFF3E0 0%,#FFB74D 48%,#FF6D00 100%)', back:'linear-gradient(135deg,#EF6C00,#FF9100,#FFD54F)', glow:'#FF9100' },
+      { cls:'theme-purple', front:'linear-gradient(135deg,#F3E5F5 0%,#CE93D8 48%,#FF00C8 100%)', back:'linear-gradient(135deg,#7B1FA2,#B026FF,#FF00C8)', glow:'#FF00C8' },
+      { cls:'theme-pink', front:'linear-gradient(135deg,#FCE4EC 0%,#F48FB1 48%,#FF4081 100%)', back:'linear-gradient(135deg,#C2185B,#FF4081,#FF80AB)', glow:'#FF4081' },
+      { cls:'theme-gold', front:'linear-gradient(135deg,#FFFDE7 0%,#FFF176 48%,#FFC107 100%)', back:'linear-gradient(135deg,#F9A825,#FFD700,#FF8F00)', glow:'#FFD700' },
+      { cls:'theme-teal', front:'linear-gradient(135deg,#E0F7FA 0%,#80DEEA 48%,#00BCD4 100%)', back:'linear-gradient(135deg,#00838F,#00BCD4,#84FFFF)', glow:'#00D9FF' },
+      { cls:'theme-indigo', front:'linear-gradient(135deg,#EDE7F6 0%,#B39DDB 48%,#651FFF 100%)', back:'linear-gradient(135deg,#4527A0,#651FFF,#B388FF)', glow:'#7C4DFF' },
+      { cls:'theme-red', front:'linear-gradient(135deg,#FFEBEE 0%,#EF9A9A 48%,#FF1744 100%)', back:'linear-gradient(135deg,#B71C1C,#FF1744,#FF8A80)', glow:'#FF1744' },
+      { cls:'theme-sky', front:'linear-gradient(135deg,#E1F5FE 0%,#81D4FA 48%,#0288D1 100%)', back:'linear-gradient(135deg,#01579B,#0288D1,#80D8FF)', glow:'#00B0FF' },
+      { cls:'theme-lime', front:'linear-gradient(135deg,#F9FBE7 0%,#DCE775 48%,#AEEA00 100%)', back:'linear-gradient(135deg,#558B2F,#AEEA00,#EEFF41)', glow:'#AEEA00' },
+      { cls:'theme-coral', front:'linear-gradient(135deg,#FBE9E7 0%,#FFAB91 48%,#FF5722 100%)', back:'linear-gradient(135deg,#BF360C,#FF5722,#FFAB91)', glow:'#FF6D00' }
+    ];
+    const theme = themes[index % themes.length];
+
+    /* পরিচিত অধ্যায়ের জন্য নির্দিষ্ট রং; অন্য কার্ডও আলাদা রং পাবে */
+    const normalizedTitle = titleText.toLocaleLowerCase();
+    let chosenTheme = theme;
+    if (normalizedTitle.includes('lcm') || normalizedTitle.includes('hcf')) chosenTheme = themes[0];
+    else if (normalizedTitle.includes('time and work') || normalizedTitle.includes('time & work')) chosenTheme = themes[1];
+    else if (normalizedTitle.includes('লাভ-ক্ষতি') || normalizedTitle.includes('profit-loss') || normalizedTitle.includes('profit and loss')) chosenTheme = themes[2];
+    else if (normalizedTitle.includes('শতকরা') || normalizedTitle.includes('percentage')) chosenTheme = themes[3];
+    else if (normalizedTitle.includes('সরল সুদ') || normalizedTitle.includes('simple interest')) chosenTheme = themes[4];
+    else if (normalizedTitle.includes('ধার্য মূল্য') || normalizedTitle.includes('marked price')) chosenTheme = themes[5];
+
+    card.classList.add(chosenTheme.cls);
+    card.style.setProperty('--card-glow', chosenTheme.glow);
 
     card.innerHTML=`
       <div class="flip-inner">
-        <div class="flip-front">
+        <div class="flip-front" style="background:${chosenTheme.front}">
           ${coverHTML}
           <h4>${titleText}</h4>
           <p>${descText}</p>
@@ -419,7 +446,7 @@ function makeFlipCards(){
           </div>
           <span class="flip-hint">🔄 পিছনের দিক দেখতে কার্ডে চাপ দিন</span>
         </div>
-        <div class="flip-back" style="background:linear-gradient(135deg,${color} 0%,#ff9100 28%,#ff00c8 55%,#651fff 78%,#00c8ff 100%)">
+        <div class="flip-back" style="background:${chosenTheme.back}">
           <h4>${titleText}</h4>
           <p>${descText}<br>RAJANI ACADEMY<br>পড়ুন, অনুশীলন করুন, সফল হোন।</p>
           <div class="card-action-links">
