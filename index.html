@@ -579,23 +579,38 @@ function runMaterialSearch(){
 materialSearch.addEventListener('input',runMaterialSearch);
 runMaterialSearch();
 
-/* Track clicks on study-material links */
+
+/* Track individual study-material card clicks */
 document.addEventListener('click', function(event) {
   const link = event.target.closest('a.open-link');
   if (!link) return;
 
-  if (typeof window.gtag === 'function') {
-    const card = link.closest('.card');
-    const title = card && card.querySelector('h4');
+  const card = link.closest('.card');
+  if (!card) return;
 
+  const coverTitle = card.querySelector(
+    '.flip-front .cover-placeholder'
+  );
+
+  const heading = card.querySelector('.flip-front h4');
+
+  const cardName = (
+    coverTitle?.innerText ||
+    heading?.innerText ||
+    'Unknown Material'
+  ).replace(/\s+/g, ' ').trim();
+
+  if (typeof window.gtag === 'function') {
     window.gtag('event', 'study_material_click', {
-      link_text: (link.textContent || '').trim(),
+      card_name: cardName,
+      material_title: cardName,
+      link_text: (link.innerText || '').trim(),
       link_url: link.href,
-      material_title: title ? title.textContent.trim() : '',
       page_location: window.location.href
     });
   }
 });
+
 </script>
 </body>
 </html>
