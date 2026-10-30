@@ -160,16 +160,158 @@ html body main .card-grid {
 .card.search-hidden{display:none!important}
 .search-empty{display:none;background:white;border-radius:8px;padding:15px;text-align:center;margin:10px 0;color:#123e86}
 @media(max-width:600px){.search-panel{padding:10px}.search-panel h2{font-size:18px}.search-panel input{font-size:13px;padding:10px}}
+
+
+/* ===== LEFT SIDEBAR MENU: added without changing existing cards/layout ===== */
+#sidebarToggle{
+  position:fixed;left:12px;top:12px;z-index:1002;
+  border:0;border-radius:8px;background:#ffeb00;color:#0808c9;
+  padding:10px 13px;font-size:22px;font-weight:bold;cursor:pointer;
+  box-shadow:0 2px 8px #0004;
+}
+#leftSidebar{
+  position:fixed;top:0;left:0;width:290px;max-width:85vw;height:100vh;
+  overflow-y:auto;background:#082b70;color:#fff;z-index:1004;
+  transform:translateX(-105%);transition:transform .28s ease;
+  box-shadow:4px 0 18px #0005;padding:16px 14px 28px;
+}
+#leftSidebar.open{transform:translateX(0)}
+#sidebarOverlay{
+  display:none;position:fixed;inset:0;background:#0007;z-index:1003;
+}
+#sidebarOverlay.show{display:block}
+.sidebar-top{display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid #ffffff55;padding:5px 0 14px;margin-bottom:10px}
+.sidebar-top strong{font-size:19px;color:#ffeb00}
+#sidebarClose{border:0;background:#ffeb00;color:#082b70;border-radius:6px;
+  padding:5px 10px;font-size:20px;cursor:pointer}
+.sidebar-menu,.sidebar-submenu{list-style:none;margin:0;padding:0}
+.sidebar-menu a,.sidebar-menu summary{
+  display:block;color:#fff;text-decoration:none;padding:11px 10px;
+  border-radius:6px;font-size:14px;font-weight:bold;cursor:pointer;
+}
+.sidebar-menu a:hover,.sidebar-menu summary:hover{background:#174b9b;color:#ffeb00}
+.sidebar-menu details{border-bottom:1px solid #ffffff22}
+.sidebar-submenu{padding:0 0 8px 13px}
+.sidebar-submenu a{font-size:13px;font-weight:normal;padding:8px 10px}
+.sidebar-submenu .coming-soon{opacity:.65;cursor:default}
+.sidebar-menu summary{list-style:none}
+.sidebar-menu summary::-webkit-details-marker{display:none}
+.sidebar-menu summary:after{content:"＋";float:right;color:#ffeb00}
+.sidebar-menu details[open]>summary:after{content:"−"}
+@media(max-width:600px){
+  #sidebarToggle{top:8px;left:8px;padding:8px 11px;font-size:20px}
+}
+
 </style>
 </head>
 
-<body>
+<body id="top">
 <header>
   <img src="image/bb578b6a-b866-4c9f-8adf-a4984c9b72d3.png" alt="Rajani Academy Logo">
   <h1>RAJANI ACADEMY</h1>
   <p>ওয়েবসাইটে আপনাকে স্বাগতম</p>
   <p>School Study Materials | Competitive Exam Preparation | MCQ | PDF Notes</p>
 </header>
+
+
+<!-- LEFT SIDEBAR MENU: independent navigation; existing top navigation is retained -->
+<button id="sidebarToggle" type="button" aria-label="মেনু খুলুন" aria-controls="leftSidebar" aria-expanded="false">☰</button>
+<div id="sidebarOverlay"></div>
+<aside id="leftSidebar" aria-label="প্রধান মেনু">
+  <div class="sidebar-top">
+    <strong>RAJANI ACADEMY</strong>
+    <button id="sidebarClose" type="button" aria-label="মেনু বন্ধ করুন">✕</button>
+  </div>
+  <ul class="sidebar-menu">
+    <li><a href="#top">HOME</a></li>
+    <li>
+      <details>
+        <summary>CLASSES</summary>
+        <ul class="sidebar-submenu">
+          <li><a href="#class-5">Class 5</a></li>
+          <li><a href="#class-6">Class 6</a></li>
+          <li><a href="#class-7">Class 7</a></li>
+          <li><a href="#class-8">Class 8</a></li>
+          <li><a href="#class-9">Class 9</a></li>
+          <li><a href="#class-10">Class 10</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Class 11 — শীঘ্রই আসছে</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Class 12 — শীঘ্রই আসছে</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>SUBJECTS</summary>
+        <ul class="sidebar-submenu">
+          <li><a href="#school-materials">Bengali</a></li>
+          <li><a href="#subject-english">English</a></li>
+          <li><a href="#subject-math">Mathematics</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Physical Science — শীঘ্রই আসছে</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Life Science — শীঘ্রই আসছে</a></li>
+          <li><a href="#subject-gk">History / General Knowledge</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Geography — শীঘ্রই আসছে</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>STUDY MATERIALS</summary>
+        <ul class="sidebar-submenu">
+          <li><a href="#school-materials">Notes</a></li>
+          <li><a href="#school-materials">Question Answers</a></li>
+          <li><a href="#school-materials">Worksheets</a></li>
+          <li><a href="download.html">PDF Downloads</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>WRITING SECTION</summary>
+        <ul class="sidebar-submenu">
+          <li><a class="coming-soon" href="#coming-soon">Report Writing — শীঘ্রই আসছে</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Letter Writing — শীঘ্রই আসছে</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Notice Writing — শীঘ্রই আসছে</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Paragraph Writing — শীঘ্রই আসছে</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Essay Writing — শীঘ্রই আসছে</a></li>
+          <li><a href="#subject-english">Grammar</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>QUESTION PAPERS</summary>
+        <ul class="sidebar-submenu">
+          <li><a class="coming-soon" href="#coming-soon">Previous Year Papers — শীঘ্রই আসছে</a></li>
+          <li><a href="#subject-practice">Model Papers</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Solutions — শীঘ্রই আসছে</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>PRACTICE ZONE</summary>
+        <ul class="sidebar-submenu">
+          <li><a href="#subject-practice">MCQ</a></li>
+          <li><a href="#subject-practice">Quiz</a></li>
+          <li><a href="#subject-practice">Mock Test</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>MORE</summary>
+        <ul class="sidebar-submenu">
+          <li><a href="#subject-gk">General Knowledge</a></li>
+          <li><a class="coming-soon" href="#coming-soon">Study Tips — শীঘ্রই আসছে</a></li>
+          <li><a href="#about-rajani">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</aside>
+
 
 <nav>
 <ul class="menu">
@@ -202,7 +344,7 @@ html body main .card-grid {
 </nav>
 
 <main>
-<section aria-label="Rajani Academy পরিচিতি" style="max-width:1000px;margin:10px auto 18px;padding:12px 14px;background:#fff;border-radius:8px;line-height:1.7">
+<section id="about-rajani" aria-label="Rajani Academy পরিচিতি" style="max-width:1000px;margin:10px auto 18px;padding:12px 14px;background:#fff;border-radius:8px;line-height:1.7">
   <h2 style="color:#123e86;font-size:20px;margin-bottom:6px">RAJANI ACADEMY — রজনী অ্যাকাডেমি</h2>
   <p>রজনী অ্যাকাডেমিতে স্কুলের Class 5–10-এর স্টাডি ম্যাটেরিয়ালস, বাংলা ও ইংরেজি শিক্ষাসামগ্রী, গণিতের অধ্যায়ভিত্তিক Practice Set, General Knowledge (GK), English Grammar, MCQ এবং বিভিন্ন প্রতিযোগিতামূলক পরীক্ষার প্রস্তুতির উপকরণ খুঁজুন।</p>
 </section>
@@ -217,7 +359,7 @@ html body main .card-grid {
 
 <h2 class="section-heading">চাকরির পরীক্ষার স্টাডি ম্যাটেরিয়ালস</h2>
 
-<section class="subject-section subject-math">
+<section id="subject-math" class="subject-section subject-math">
 <h3 class="class-heading">1. MATH — গণিত</h3>
 <div class="card-grid">
 <div class="card"><div class="cover"><div class="cover-placeholder">PRACTICE SET<br>সংখ্যা পদ্ধতি <br>(Number System)</div></div><h4>● গ্রাম পঞ্চায়েত কর্মী ●  ক্লার্ক ● রেল 
@@ -267,7 +409,7 @@ html body main .card-grid {
 </div>
 </section>
 
-<section class="subject-section subject-gk">
+<section id="subject-gk" class="subject-section subject-gk">
 <h3 class="class-heading">2. GK — সাধারণ জ্ঞান</h3>
 <div class="card-grid">
 <div class="card"><div class="cover"><div class="cover-placeholder">GENERAL<br>KNOWLEDGE</div></div><h4>General Knowledge</h4><p>সাধারণ জ্ঞান</p><a class="open-link" href="mission.html">বই খুলুন</a></div>
@@ -278,7 +420,7 @@ html body main .card-grid {
 </div>
 </section>
 
-<section class="subject-section subject-english">
+<section id="subject-english" class="subject-section subject-english">
 <h3 class="class-heading">3. ENGLISH — ইংরেজি</h3>
 <div class="card-grid">
 <div class="card"><div class="cover"><div class="cover-placeholder">ENGLISH<br>GRAMMAR</div></div><h4>English Grammar</h4><p>Grammar MCQ</p><a class="open-link" href="downloadlink.html">বই খুলুন</a></div>
@@ -289,7 +431,7 @@ html body main .card-grid {
 </div>
 </section>
 
-<section class="subject-section subject-current">
+<section id="subject-current" class="subject-section subject-current">
 <h3 class="class-heading">4. Current Affairs — সাম্প্রতিক ঘটনা</h3>
 <div class="card-grid">
 <div class="card"><div class="cover"><div class="cover-placeholder">CURRENT<br>AFFAIRS</div></div><h4>Current Affairs</h4><p>সাম্প্রতিক ঘটনা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
@@ -300,7 +442,7 @@ html body main .card-grid {
 </div>
 </section>
 
-<section class="subject-section subject-reasoning">
+<section id="subject-reasoning" class="subject-section subject-reasoning">
 <h3 class="class-heading">5. Reasoning — যুক্তি ও মানসিক দক্ষতা</h3>
 <div class="card-grid">
 <div class="card"><div class="cover"><div class="cover-placeholder">REASONING</div></div><h4>Reasoning Basics</h4><p>যুক্তির প্রাথমিক ধারণা</p><a class="open-link" href="download.html">বই খুলুন</a></div>
@@ -311,7 +453,7 @@ html body main .card-grid {
 </div>
 </section>
 
-<section class="subject-section subject-practice">
+<section id="subject-practice" class="subject-section subject-practice">
 <h3 class="class-heading">6. Practice Sets — পরীক্ষার অনুশীলন</h3>
 <div class="card-grid">
 <div class="card"><div class="cover"><div class="cover-placeholder">WBSSC<br>GROUP C</div></div><h4>WBSSC Group C</h4><p>মডেল প্রশ্নপত্র</p><a class="open-link" href="download.html">সেট খুলুন</a></div>
@@ -375,6 +517,7 @@ const schoolContainer = document.getElementById("school-materials");
 schoolClasses.forEach(group => {
   const section = document.createElement("section");
   section.className = "class-section";
+  section.id = "class-" + group.no;
 
   const heading = document.createElement("h3");
   heading.className = "class-heading";
@@ -584,6 +727,38 @@ document.addEventListener('click', function(event) {
     });
   }
 });
+
+</script>
+<script>
+
+/* Sidebar controls: only opens/closes the new left menu. */
+(function(){
+  const sidebar = document.getElementById('leftSidebar');
+  const toggle = document.getElementById('sidebarToggle');
+  const closeBtn = document.getElementById('sidebarClose');
+  const overlay = document.getElementById('sidebarOverlay');
+  function openSidebar(){
+    sidebar.classList.add('open');
+    overlay.classList.add('show');
+    toggle.setAttribute('aria-expanded','true');
+  }
+  function closeSidebar(){
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+    toggle.setAttribute('aria-expanded','false');
+  }
+  toggle.addEventListener('click', openSidebar);
+  closeBtn.addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
+  sidebar.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+      if(!link.classList.contains('coming-soon')) closeSidebar();
+    });
+  });
+  document.addEventListener('keydown', event=>{
+    if(event.key === 'Escape') closeSidebar();
+  });
+})();
 
 </script>
 </body>
