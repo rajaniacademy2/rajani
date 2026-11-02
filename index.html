@@ -497,35 +497,53 @@ motivationalSection.className = "class-section";
 motivationalSection.id = "motivational-books";
 
 motivationalSection.innerHTML = `
+// MOTIVATIONAL SECTION
+const motivationalSection = document.createElement("section");
+motivationalSection.className = "class-section";
+motivationalSection.id = "motivational-books";
+
+motivationalSection.innerHTML = `
 <h3 class="class-heading">MOTIVATIONAL BOOKS — অনুপ্রেরণামূলক বই</h3>
 
-  <div class="card-grid">
+<div class="card-grid">
 
-    <div class="card">
-      <h3>সফলতার চাবিকাঠি </h3>
-      <p>Success & Motivation </p>
-      <a class="open-link" href="books/motivational/success.pdf" target="_blank">Read PDF</a>
+  <div class="card">
+    <div class="cover">
+      <div class="cover-placeholder">SUCCESS</div>
     </div>
-
-    <div class="card">
-      <h3>জীবনের লক্ষ্য</h3>
-      <p>Life Goals</p>
-      <a href="books/motivational/life-goals.pdf" target="_blank">Read PDF</a>
-    </div>
-
-    <div class="card">
-      <h3>আত্মবিশ্বাস বৃদ্ধি</h3>
-      <p>Self Confidence</p>
-      <a href="books/motivational/confidence.pdf" target="_blank">Read PDF</a>
-    </div>
-
-    <div class="card">
-      <h3>সময় ব্যবস্থাপনা</h3>
-      <p>Time Management</p>
-      <a href="books/motivational/time-management.pdf" target="_blank">Read PDF</a>
-    </div>
-
+    <h4>সফলতার চাবিকাঠি</h4>
+    <p>Success & Motivation</p>
+    <a class="open-link" href="books/motivational/success.pdf" target="_blank">Read PDF</a>
   </div>
+
+  <div class="card">
+    <div class="cover">
+      <div class="cover-placeholder">LIFE GOALS</div>
+    </div>
+    <h4>জীবনের লক্ষ্য</h4>
+    <p>Life Goals</p>
+    <a class="open-link" href="books/motivational/life-goals.pdf" target="_blank">Read PDF</a>
+  </div>
+
+  <div class="card">
+    <div class="cover">
+      <div class="cover-placeholder">SELF CONFIDENCE</div>
+    </div>
+    <h4>আত্মবিশ্বাস বৃদ্ধি</h4>
+    <p>Self Confidence</p>
+    <a class="open-link" href="books/motivational/confidence.pdf" target="_blank">Read PDF</a>
+  </div>
+
+  <div class="card">
+    <div class="cover">
+      <div class="cover-placeholder">TIME MANAGEMENT</div>
+    </div>
+    <h4>সময় ব্যবস্থাপনা</h4>
+    <p>Time Management</p>
+    <a class="open-link" href="books/motivational/time-management.pdf" target="_blank">Read PDF</a>
+  </div>
+
+</div>
 `;
 
 schoolContainer.appendChild(motivationalSection);
