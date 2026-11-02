@@ -502,8 +502,8 @@ motivationalSection.innerHTML = `
   <div class="card-grid">
 
     <div class="card">
-      <h3>সফলতার চাবিকাঠি</h3>
-      <p>Success & Motivation</p>
+      <h3>সফলতার চাবিকাঠি GGGGGG</h3>
+      <p>Success & Motivation GGGG</p>
       <a href="books/motivational/success.pdf" target="_blank">Read PDF</a>
     </div>
 
@@ -690,7 +690,8 @@ function makeFlipCards(){
         </div>
         <div class="flip-back" style="background:${chosenTheme.back}">
           <h4>${titleText}</h4>
-          <p>${descText}<br>RAJANI ACADEMY<br>পড়ুন, অনুশীলন করুন, সফল হোন।</p>
+         <p>${descText}<br>${card.dataset.backName || 'RAJANI ACADEMY'}<br>পড়ুন, অনুশীলন করুন, সফল হোন।</p>
+         
           <div class="card-action-links">
             <a class="open-link video-button" href="${videoHref}" target="_blank" rel="noopener">▶ ভিডিও দেখুন</a>
           </div>
