@@ -502,9 +502,9 @@ motivationalSection.innerHTML = `
   <div class="card-grid">
 
     <div class="card">
-      <h3>সফলতার চাবিকাঠি GGGGGG</h3>
+      <h3>সফলতার চাবিকাঠি </h3>
       <p>Success & Motivation GGGG</p>
-      <a href="books/motivational/success.pdf" target="_blank">Read PDF</a>
+      <a class="open-link" href="books/motivational/success.pdf" target="_blank">Read PDF</a>
     </div>
 
     <div class="card">
@@ -617,7 +617,7 @@ function makeFlipCards(){
   document.querySelectorAll('.card').forEach((card,index)=>{
     if(card.querySelector('.flip-inner')) return;
     const cover=card.querySelector('.cover');
-    const title=card.querySelector('h4');
+   const title=card.querySelector('h4, h3');
     const desc=card.querySelector('p');
     const oldLink=card.querySelector('a.open-link');
     const titleText=title ? title.textContent.trim() : 'Study Materials';
