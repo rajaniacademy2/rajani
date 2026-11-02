@@ -497,7 +497,7 @@ motivationalSection.className = "class-section";
 motivationalSection.id = "motivational-books";
 
 motivationalSection.innerHTML = `
-  <h2>MOTIVATIONAL BOOKS</h2>
+ <h2>MOTIVATIONAL — অনুপ্রেরণামূলক বই</h2>
 
   <div class="card-grid">
 
@@ -567,7 +567,39 @@ schoolClasses.forEach(group => {
 
     const link = document.createElement("a");
     link.className = "open-link";
-    link.href = "books/class" + group.no + "/" + subjectSlug + ".pdf";
+    const classPdfLinks = {
+  5: {
+    bangla: "books/class5/bangla.pdf",
+    english: "books/class5/english.pdf",
+    math: "books/class5/math.pdf",
+    environment: "books/class5/environment.pdf"
+  },
+  6: {
+    bangla: "books/class6/bangla.pdf",
+    english: "books/class6/english.pdf",
+    math: "books/class6/math.pdf",
+    science: "books/class6/science.pdf"
+  },
+  7: {bangla: "books/class5/bangla.pdf",
+    english: "books/class5/english.pdf",
+    math: "books/class5/math.pdf",
+    environment: "books/class5/environment.pdf"},
+  8: {bangla: "books/class5/bangla.pdf",
+    english: "books/class5/english.pdf",
+    math: "books/class5/math.pdf",
+    environment: "books/class5/environment.pdf"},
+  9: {bangla: "books/class5/bangla.pdf",
+    english: "books/class5/english.pdf",
+    math: "books/class5/math.pdf",
+    environment: "books/class5/environment.pdf"},
+  10: {bangla: "books/class5/bangla.pdf",
+    english: "books/class5/english.pdf",
+    math: "books/class5/math.pdf",
+    environment: "books/class5/environment.pdf"}
+};
+
+link.href = classPdfLinks[group.no]?.[subjectSlug]
+  || ("books/class" + group.no + "/" + subjectSlug + ".pdf");
     link.textContent = "বই খুলুন";
     link.target = "_blank";
     link.rel = "noopener";
