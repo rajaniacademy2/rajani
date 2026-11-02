@@ -229,7 +229,7 @@ html body main .card-grid {
       <details>
         <summary>CLASSES</summary>
         <ul class="sidebar-submenu">
-           <li><a href="#MOTIVATIONAL BOOK">MOTIVATIONAL BOOK</a></li>
+           <li><a href="#motivational-books">MOTIVATIONAL BOOK</a></li>
           <li><a href="#class-5">Class 5</a></li>
           <li><a href="#class-6">Class 6</a></li>
           <li><a href="#class-7">Class 7</a></li>
@@ -490,6 +490,46 @@ const schoolClasses = [
 ];
 
 const schoolContainer = document.getElementById("school-materials");
+  
+// MOTIVATIONAL SECTION
+const motivationalSection = document.createElement("section");
+motivationalSection.className = "class-section";
+motivationalSection.id = "motivational-books";
+
+motivationalSection.innerHTML = `
+  <h2>MOTIVATIONAL BOOKS</h2>
+
+  <div class="cards-container">
+
+    <div class="card">
+      <h3>সফলতার চাবিকাঠি</h3>
+      <p>Success & Motivation</p>
+      <a href="books/motivational/success.pdf" target="_blank">Read PDF</a>
+    </div>
+
+    <div class="card">
+      <h3>জীবনের লক্ষ্য</h3>
+      <p>Life Goals</p>
+      <a href="books/motivational/life-goals.pdf" target="_blank">Read PDF</a>
+    </div>
+
+    <div class="card">
+      <h3>আত্মবিশ্বাস বৃদ্ধি</h3>
+      <p>Self Confidence</p>
+      <a href="books/motivational/confidence.pdf" target="_blank">Read PDF</a>
+    </div>
+
+    <div class="card">
+      <h3>সময় ব্যবস্থাপনা</h3>
+      <p>Time Management</p>
+      <a href="books/motivational/time-management.pdf" target="_blank">Read PDF</a>
+    </div>
+
+  </div>
+`;
+
+schoolContainer.appendChild(motivationalSection);
+
 
 schoolClasses.forEach(group => {
   const section = document.createElement("section");
