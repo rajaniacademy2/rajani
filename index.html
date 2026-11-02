@@ -687,18 +687,7 @@ function makeFlipCards(){
     else if (normalizedTitle.includes('সরল সুদ') || normalizedTitle.includes('simple interest')) chosenTheme = themes[4];
     else if (normalizedTitle.includes('ধার্য মূল্য') || normalizedTitle.includes('marked price')) chosenTheme = themes[5];
 
-/* MOTIVATIONAL BOOKS-এর জন্য আলাদা রং */
-if (card.closest('#motivational-books')) {
-  const motivationalThemes = [
-    themes[5],
-    themes[7],
-    themes[1],
-    themes[4]
-  ];
 
-  const cardNumber = [...card.parentElement.children].indexOf(card);
-  chosenTheme = motivationalThemes[cardNumber] || themes[0];
-}
     card.classList.add(chosenTheme.cls);
     card.style.setProperty('--card-glow', chosenTheme.glow);
 
