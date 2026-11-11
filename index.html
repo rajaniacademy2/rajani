@@ -486,45 +486,6 @@ html body main .card-grid {
 </footer>
 
 <script>
-/* Class 5–10 study-material cards: use the same card structure as competitive materials */
-const schoolClasses = [
-  { no: 5, bengali: "পঞ্চম", subjects: [
-    ["বাংলা", "বাংলা পাঠ ও অনুশীলন", "bangla"],
-    ["English", "ইংরেজি পাঠ ও অনুশীলন", "english"],
-    ["গণিত", "গণিতের অধ্যায় ও অনুশীলন", "math"],
-    ["পরিবেশ পরিচিতি", "পরিবেশ শিক্ষা ও অনুশীলন", "environment"]
-  ]},
-  { no: 6, bengali: "ষষ্ঠ", subjects: [
-    ["বাংলা", "বাংলা পাঠ ও অনুশীলন", "bangla"],
-    ["English", "ইংরেজি পাঠ ও অনুশীলন", "english"],
-    ["গণিত", "গণিতের অধ্যায় ও অনুশীলন", "math"],
-    ["বিজ্ঞান", "বিজ্ঞানের অধ্যায় ও অনুশীলন", "science"]
-  ]},
-  { no: 7, bengali: "সপ্তম", subjects: [
-    ["বাংলা", "বাংলা পাঠ ও অনুশীলন", "bangla"],
-    ["English", "ইংরেজি পাঠ ও অনুশীলন", "english"],
-    ["গণিত", "গণিতের অধ্যায় ও অনুশীলন", "math"],
-    ["বিজ্ঞান", "বিজ্ঞানের অধ্যায় ও অনুশীলন", "science"]
-  ]},
-  { no: 8, bengali: "অষ্টম", subjects: [
-    ["বাংলা", "বাংলা পাঠ ও অনুশীলন", "bangla"],
-    ["English", "ইংরেজি পাঠ ও অনুশীলন", "english"],
-    ["গণিত", "গণিতের অধ্যায় ও অনুশীলন", "math"],
-    ["বিজ্ঞান", "বিজ্ঞানের অধ্যায় ও অনুশীলন", "science"]
-  ]},
-  { no: 9, bengali: "নবম", subjects: [
-    ["বাংলা", "বাংলা পাঠ ও অনুশীলন", "bangla"],
-    ["English", "ইংরেজি পাঠ ও অনুশীলন", "english"],
-    ["গণিত", "গণিতের অধ্যায় ও অনুশীলন", "math"],
-    ["ভৌতবিজ্ঞান", "ভৌতবিজ্ঞানের অধ্যায় ও অনুশীলন", "physical-science"]
-  ]},
-  { no: 10, bengali: "দশম", subjects: [
-    ["বাংলা", "বাংলা পাঠ ও অনুশীলন", "bangla"],
-    ["English", "ইংরেজি পাঠ ও অনুশীলন", "english"],
-    ["গণিত", "গণিতের অধ্যায় ও অনুশীলন", "math"],
-    ["ভৌতবিজ্ঞান", "ভৌতবিজ্ঞানের অধ্যায় ও অনুশীলন", "physical-science"]
-  ]}
-];
 
 const schoolContainer = document.getElementById("school-materials");
   
@@ -580,86 +541,6 @@ motivationalSection.innerHTML = `
 schoolContainer.appendChild(motivationalSection);
 
 
-schoolClasses.forEach(group => {
-  const section = document.createElement("section");
-  section.className = "class-section";
-  section.id = "class-" + group.no;
-
-  const heading = document.createElement("h3");
-  heading.className = "class-heading";
-  heading.textContent = "Class " + group.no + " — " + group.bengali + " শ্রেণি";
-  section.appendChild(heading);
-
-  const grid = document.createElement("div");
-  grid.className = "card-grid";
-
-  group.subjects.forEach(subject => {
-    const [titleText, descriptionText, subjectSlug] = subject;
-    const card = document.createElement("div");
-    card.className = "card";
-
-    const cover = document.createElement("div");
-    cover.className = "cover";
-    const placeholder = document.createElement("div");
-    placeholder.className = "cover-placeholder";
-    placeholder.textContent = "CLASS " + group.no + "\n" + titleText;
-    cover.appendChild(placeholder);
-    card.appendChild(cover);
-
-    const title = document.createElement("h4");
-    title.textContent = "Class " + group.no + " — " + titleText;
-    card.appendChild(title);
-
-    const desc = document.createElement("p");
-    desc.textContent = descriptionText;
-    card.appendChild(desc);
-
-    const link = document.createElement("a");
-    link.className = "open-link";
-    const classPdfLinks = {
-  5: {
-    bangla: "books/class5/bangla.pdf",
-    english: "books/class5/english.pdf",
-    math: "books/class5/math.pdf",
-    environment: "books/class5/environment.pdf"
-  },
-  6: {
-    bangla: "books/class6/bangla.pdf",
-    english: "books/class6/english.pdf",
-    math: "books/class6/math.pdf",
-    science: "books/class6/science.pdf"
-  },
-  7: {bangla: "books/class5/bangla.pdf",
-    english: "books/class5/english.pdf",
-    math: "books/class5/math.pdf",
-    environment: "books/class5/environment.pdf"},
-  8: {bangla: "books/class5/bangla.pdf",
-    english: "books/class5/english.pdf",
-    math: "books/class5/math.pdf",
-    environment: "books/class5/environment.pdf"},
-  9: {bangla: "books/class5/bangla.pdf",
-    english: "books/class5/english.pdf",
-    math: "books/class5/math.pdf",
-    environment: "books/class5/environment.pdf"},
-  10: {bangla: "books/class5/bangla.pdf",
-    english: "books/class5/english.pdf",
-    math: "books/class5/math.pdf",
-    environment: "books/class5/environment.pdf"}
-};
-
-link.href = classPdfLinks[group.no]?.[subjectSlug]
-  || ("books/class" + group.no + "/" + subjectSlug + ".pdf");
-    link.textContent = "বই খুলুন";
-    link.target = "_blank";
-    link.rel = "noopener";
-    card.appendChild(link);
-
-    grid.appendChild(card);
-  });
-
-  section.appendChild(grid);
-  schoolContainer.appendChild(section);
-});
 
 /* Turn every school and competitive-study card into a colorful, clickable flip card. */
 function makeFlipCards(){
